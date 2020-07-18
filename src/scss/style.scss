@@ -213,12 +213,84 @@ a {
   transition: transform 1s;
   transform: translateY(-50%) rotate(180deg) !important;
 }
+
 .rotate-180 {
   transition: transform 1s;
   transform: translateY(-50%) rotate(-180deg) !important;
 }
 
+.desktop {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+  @media (max-width: 992px) {
+    display: block;
+  }
+}
+
+
 // Parts
+.main-content {
+  &-block {
+    padding-bottom: 4rem;
+    text-align: center;
+    background: url("../img/main/cont-bg.png");
+
+    p {
+      color: #000 !important;
+      padding: 2rem 2rem 2rem 4rem;
+      margin: 0 !important;
+      @media (max-width: 425px) {
+        padding: 1rem 1rem 1rem 2rem;
+      }
+    }
+  }
+
+  &-header {
+    background: $imp-text-color;
+    mix-blend-mode: multiply;
+    padding: 2rem;
+
+    h1 {
+      font-weight: 900;
+      font-size: 8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      @media (max-width: 768px) {
+        font-size: 5rem;
+      }
+      @media (max-width: 425px) {
+        font-size: 3.5rem;
+      }
+    }
+
+    span {
+      color: #000 !important;
+      font-weight: 300 !important;
+      text-transform: uppercase;
+      font-size: 2.5rem !important;
+      @media (max-width: 768px) {
+        font-size: 1.8rem !important;
+      }
+      @media (max-width: 425px) {
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  .count-link {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.6rem !important;
+  }
+}
+
 .main-header-desktop {
   position: fixed;
   top: 0;
@@ -250,7 +322,7 @@ a {
   }
 }
 
-.logo-mobile{
+.logo-mobile {
   display: none;
   position: fixed;
   top: 2rem;
@@ -262,7 +334,7 @@ a {
   }
 }
 
-.top-horizon{
+.top-horizon {
   display: none;
   position: fixed;
   top: 0;
@@ -273,7 +345,7 @@ a {
   width: 100%;
 }
 
-.main-header-mobile{
+.main-header-mobile {
   max-height: 100vh;
   overflow-y: scroll;
   display: none;
@@ -288,29 +360,35 @@ a {
   @media (max-width: 992px) {
     display: block;
   }
-  &-content{
+
+  &-content {
     text-align: center;
     padding-top: $menu-height;
-    .phone-link{
+
+    .phone-link {
       margin: 2rem 0;
       font-size: 3.2rem;
     }
-    .menu-block{
+
+    .menu-block {
       display: inline-block;
       width: 100%;
-      a{
+
+      a {
         display: block;
         margin: 2rem 0;
         font-size: 2rem;
       }
-      &-header{
+
+      &-header {
         color: #fff;
         font-size: 3rem;
         text-transform: uppercase;
         @media (max-width: 576px) {
           font-size: 2.5rem;
         }
-        &::after{
+
+        &::after {
           margin: 0 auto;
           content: "";
           display: block;
@@ -321,13 +399,15 @@ a {
       }
     }
   }
-  .main-arrows{
+
+  .main-arrows {
     height: $menu-height;
     position: relative;
     width: 100%;
   }
-  .main-arrow{
-    &-left{
+
+  .main-arrow {
+    &-left {
       height: $menu-height/2;
       position: absolute;
       top: $menu-height/2;
@@ -342,7 +422,8 @@ a {
         height: 1.17rem;
       }
     }
-    &-right{
+
+    &-right {
       height: $menu-height/2;
       position: absolute;
       top: $menu-height/2;
@@ -923,7 +1004,7 @@ $name-width: 40%;
         }
       }
 
-      .calc-addition-block-2{
+      .calc-addition-block-2 {
         padding: 0.5rem;
         cursor: pointer;
         display: inline-flex;
@@ -933,23 +1014,25 @@ $name-width: 40%;
         height: 6rem;
         margin: 0 1rem 2rem 1rem;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        img{
+
+        img {
           height: 100%;
         }
-        span{
+
+        span {
           font-size: 2rem;
           text-align: center;
           letter-spacing: 0.05em;
         }
       }
 
-      #calc-check{
+      #calc-check {
         position: static;
         transform: none;
         height: 4rem;
       }
 
-      #calc-phone{
+      #calc-phone {
         height: 4rem;
         border: none;
         width: 30rem;
@@ -1052,7 +1135,8 @@ $name-width: 40%;
       #light-lines {
         background: url("../img/types/light-lines.png") center center;
         background-size: cover;
-        &-1{
+
+        &-1 {
           background: url("../img/types/light-lines.png") center center;
           background-size: cover;
         }
@@ -1271,7 +1355,8 @@ $name-width: 40%;
   background: url("../img/about/bg.png") center center no-repeat;
   background-size: cover;
   mix-blend-mode: multiply;
-  &-in{
+
+  &-in {
     position: relative;
     padding: 6rem 0 10rem 0;
   }
@@ -1296,13 +1381,15 @@ $name-width: 40%;
     background-size: cover;
     width: 35%;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
-    .man{
+
+    .man {
       width: 100%;
       position: absolute;
       top: -100%;
       left: 0;
       z-index: -1;
     }
+
     &-header {
       text-align: center;
       font-size: 3.6rem;
@@ -1372,15 +1459,17 @@ $name-width: 40%;
   }
 }
 
-.request{
+.request {
   padding: 8rem 0;
-  &-card{
+
+  &-card {
     width: 100%;
     text-align: center;
     background: url("../img/request/bg.png") center center no-repeat;
     background-size: cover;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
-    &-header{
+
+    &-header {
       font-size: 1.8rem;
       width: 100%;
       padding: 2rem 0;
@@ -1388,13 +1477,16 @@ $name-width: 40%;
       mix-blend-mode: multiply;
       text-align: center;
     }
-    form{
+
+    form {
       width: 100%;
       padding: 5rem 0;
-      input{
-        &::placeholder{
+
+      input {
+        &::placeholder {
           color: #000;
         }
+
         color: #000;
         font-size: 1.8rem;
         padding: 2rem 5rem;
@@ -1404,7 +1496,8 @@ $name-width: 40%;
         width: 50%;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
       }
-      button{
+
+      button {
         border: none;
         background: #FF2C2C;
         width: 50%;
@@ -1420,7 +1513,7 @@ $name-width: 40%;
   }
 }
 
-.footer{
+.footer {
   background: #000;
   padding: 2rem 0;
 }
