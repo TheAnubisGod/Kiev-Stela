@@ -71,6 +71,16 @@ a {
   text-transform: uppercase;
   color: #FFFFFF;
   text-shadow: -3px 2px 1px black;
+  @media (max-width: 992px) {
+    color: $imp-text-color;
+    font-size: 3.6rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 2.5rem;
+  }
 }
 
 .section-header-2 {
@@ -94,6 +104,19 @@ a {
   letter-spacing: 0.05em;
   color: #000000;
   margin: 1rem;
+  @media (max-width: 992px) {
+    font-size: 3.6rem;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    margin: 5rem 0;
+  }
+  @media (max-width: 576px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
 }
 
 .phone-link {
@@ -197,7 +220,7 @@ a {
   height: $menu-height;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
-  @media (max-width: 960px) {
+  @media (max-width: 992px) {
     display: none;
   }
 
@@ -391,6 +414,10 @@ $name-width: 40%;
   padding-bottom: 2rem;
   background: #fff url("../img/types/bg.png") center bottom no-repeat;
   background-size: cover;
+  @media (max-width: 992px) {
+    background: #fff;
+    padding-top: 7rem;
+  }
 
   .types-block {
     position: relative;
@@ -398,6 +425,78 @@ $name-width: 40%;
     margin: 0.5rem 0;
     width: 100%;
     height: 16rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    @media (max-width: 992px) {
+      height: 30rem;
+      .types-block-name {
+        width: 50%;
+        transition: 0.3s linear;
+
+        .info-btn {
+          display: block;
+        }
+
+        .order-btn {
+          display: block;
+        }
+
+        &-left {
+          margin-right: 50%;
+        }
+
+        &-right {
+          margin-left: 50%;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      height: 26rem;
+    }
+    @media (max-width: 576px) {
+      .types-block-name {
+        width: 60%;
+        transition: 0.3s linear;
+
+        .info-btn {
+          display: block;
+        }
+
+        .order-btn {
+          display: block;
+        }
+
+        &-left {
+          margin-right: 60%;
+        }
+
+        &-right {
+          margin-left: 40%;
+        }
+      }
+    }
+    @media (max-width: 320px) {
+      .types-block-name {
+        width: 70%;
+        transition: 0.3s linear;
+
+        .info-btn {
+          display: block;
+        }
+
+        .order-btn {
+          display: block;
+        }
+
+        &-left {
+          margin-right: 70%;
+        }
+
+        &-right {
+          margin-left: 30%;
+        }
+      }
+    }
+
 
     &:hover {
       .types-block-name {
@@ -450,6 +549,17 @@ $name-width: 40%;
         letter-spacing: 0.2em;
         color: #000000;
         background: transparent;
+        @media (max-width: 992px) {
+          font-size: 3.6rem;
+          width: 30rem;
+          height: 8rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+          width: 20rem;
+          height: 6rem;
+        }
+
 
         &:hover {
           background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 52.08%, rgba(0, 0, 0, 0) 100%);
@@ -476,6 +586,17 @@ $name-width: 40%;
         letter-spacing: 0.2em;
         color: #000000;
         background: transparent;
+        @media (max-width: 992px) {
+          font-size: 3.6rem;
+          width: 30rem;
+          height: 8rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+          width: 20rem;
+          height: 6rem;
+        }
+
 
         &:hover {
           background: linear-gradient(270deg, rgba(255, 204, 22, 0) 0%, #FFCC16 52.08%, rgba(255, 204, 22, 0) 100%);
@@ -493,6 +614,12 @@ $name-width: 40%;
         text-align: center;
         text-transform: uppercase;
         color: #000000;
+        @media (max-width: 992px) {
+          font-size: 3.6rem;
+        }
+        @media (max-width: 768px) {
+          font-size: 3rem;
+        }
       }
 
       &-left {
