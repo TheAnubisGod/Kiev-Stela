@@ -362,6 +362,7 @@ a {
   }
 
   &-content {
+    padding-bottom: $menu-height;
     text-align: center;
     padding-top: $menu-height;
 
@@ -399,44 +400,54 @@ a {
       }
     }
   }
+}
 
-  .main-arrows {
-    height: $menu-height;
-    position: relative;
-    width: 100%;
+.main-arrows {
+  display: none;
+  height: $menu-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  background: #000;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  transition: 400ms linear;
+  @media (max-width: 992px) {
+    display: block;
+  }
+}
+
+.main-arrow {
+  &-left {
+    height: $menu-height/2;
+    position: absolute;
+    top: $menu-height/2;
+    transform: translateY(-50%);
+    left: 20%;
+    transition: 400ms linear;
+    @media (max-width: 576px) {
+      left: 10%;
+    }
+    @media (max-width: 425px) {
+      width: 3.84rem;
+      height: 1.17rem;
+    }
   }
 
-  .main-arrow {
-    &-left {
-      height: $menu-height/2;
-      position: absolute;
-      top: $menu-height/2;
-      transform: translateY(-50%);
-      left: 20%;
-      transition: 400ms linear;
-      @media (max-width: 576px) {
-        left: 10%;
-      }
-      @media (max-width: 425px) {
-        width: 3.84rem;
-        height: 1.17rem;
-      }
+  &-right {
+    height: $menu-height/2;
+    position: absolute;
+    top: $menu-height/2;
+    transform: translateY(-50%);
+    right: 20%;
+    transition: 400ms linear;
+    @media (max-width: 576px) {
+      right: 10%;
     }
-
-    &-right {
-      height: $menu-height/2;
-      position: absolute;
-      top: $menu-height/2;
-      transform: translateY(-50%);
-      right: 20%;
-      transition: 400ms linear;
-      @media (max-width: 576px) {
-        right: 10%;
-      }
-      @media (max-width: 425px) {
-        width: 3.84rem;
-        height: 1.17rem;
-      }
+    @media (max-width: 425px) {
+      width: 3.84rem;
+      height: 1.17rem;
     }
   }
 }

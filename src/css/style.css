@@ -356,6 +356,7 @@ a:hover {
   }
 }
 .main-header-mobile-content {
+  padding-bottom: 5rem;
   text-align: center;
   padding-top: 5rem;
 }
@@ -390,12 +391,26 @@ a:hover {
   width: 60%;
   background: #FFCC16;
 }
-.main-header-mobile .main-arrows {
+
+.main-arrows {
+  display: none;
   height: 5rem;
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 4;
+  background: #000;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  transition: 400ms linear;
 }
-.main-header-mobile .main-arrow-left {
+@media (max-width: 992px) {
+  .main-arrows {
+    display: block;
+  }
+}
+
+.main-arrow-left {
   height: 2.5rem;
   position: absolute;
   top: 2.5rem;
@@ -404,17 +419,17 @@ a:hover {
   transition: 400ms linear;
 }
 @media (max-width: 576px) {
-  .main-header-mobile .main-arrow-left {
+  .main-arrow-left {
     left: 10%;
   }
 }
 @media (max-width: 425px) {
-  .main-header-mobile .main-arrow-left {
+  .main-arrow-left {
     width: 3.84rem;
     height: 1.17rem;
   }
 }
-.main-header-mobile .main-arrow-right {
+.main-arrow-right {
   height: 2.5rem;
   position: absolute;
   top: 2.5rem;
@@ -423,12 +438,12 @@ a:hover {
   transition: 400ms linear;
 }
 @media (max-width: 576px) {
-  .main-header-mobile .main-arrow-right {
+  .main-arrow-right {
     right: 10%;
   }
 }
 @media (max-width: 425px) {
-  .main-header-mobile .main-arrow-right {
+  .main-arrow-right {
     width: 3.84rem;
     height: 1.17rem;
   }
