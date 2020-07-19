@@ -15,13 +15,17 @@ $(document).ready(function () {
 
     $(".main-arrows").on("click", function () {
         if (document.querySelector(".main-header-mobile-content").style.display === "none") {
-            $(".main-header-mobile-content").slideDown()
+            document.querySelector(".main-header-mobile-content").style.height = "100vh"
+            $(".main-header-mobile-content").slideDown(300, "linear")
+            document.querySelector(".main-header-mobile-content").style.height = "auto"
             document.querySelector("body").style.overflow = "hidden"
             document.querySelector(".top-horizon").style.display = "block"
             console.log('lol')
             document.querySelector(".main-arrows").style.top = ((1 - 50 / document.documentElement.clientHeight)*100).toString()+"%"
         } else {
-            $(".main-header-mobile-content").slideUp()
+            document.querySelector(".main-header-mobile-content").style.height = "100vh"
+            $(".main-header-mobile-content").slideUp(300, "linear")
+            document.querySelector(".main-header-mobile-content").style.height = "auto"
             document.querySelector("body").style.overflow = "auto"
             document.querySelector(".top-horizon").style.display = "none"
             document.querySelector(".main-arrows").style.top = "0"

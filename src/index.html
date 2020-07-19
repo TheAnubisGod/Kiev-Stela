@@ -413,56 +413,59 @@
 <!--    </div>-->
 <!--</section>-->
 
-<!--<section class="sales">-->
-<!--    <div class="section-header-2">-->
-<!--        Акции-->
-<!--    </div>-->
-<!--    <div class="sales-slider">-->
-<!--        <div class="sales-slider-slide sale-1" id="sale-1">-->
-<!--            <div class="container">-->
-<!--                <div class="sale-block">-->
-<!--                    <img src="img/sales/element.png" alt="" class="el">-->
-<!--                    <div class="sale-header">СКИДКА</div>-->
-<!--                    <div class="sale-offer">При установке натяжных потолков во всей квартире - вставка по периметру со-->
-<!--                        скидкой 50%-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+<section class="sales">
+    <div class="section-header-2">
+        Акции
+    </div>
+    <div class="dots-pos">
+        <div class="container"><div id="sales-dots"></div></div>
+    </div>
+    <div class="sales-slider">
+        <div class="sales-slider-slide sale-1" id="sale-1">
+            <div class="container-lg">
+                <div class="sale-block">
+                    <img src="img/sales/element.png" alt="" class="el">
+                    <div class="sale-header">СКИДКА</div>
+                    <div class="sale-offer">При установке натяжных потолков во всей квартире - вставка по периметру со
+                        скидкой 50%
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!--        <div class="sales-slider-slide sale-2" id="sale-2">-->
-<!--            <div class="container">-->
-<!--                <div class="sale-block">-->
-<!--                    <img src="img/sales/element.png" alt="" class="el">-->
-<!--                    <div class="sale-header">БЕСПЛАТНО</div>-->
-<!--                    <div class="sale-offer">Если квадратура помещений больше 30кв.м. - ставим алюминиевый профиль-->
-<!--                        абсолютно бесплатно-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="sales-slider-slide sale-2" id="sale-2">
+            <div class="container-lg">
+                <div class="sale-block">
+                    <img src="img/sales/element.png" alt="" class="el">
+                    <div class="sale-header">БЕСПЛАТНО</div>
+                    <div class="sale-offer">Если квадратура помещений больше 30кв.м. - ставим алюминиевый профиль
+                        абсолютно бесплатно
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!--        <div class="sales-slider-slide sale-3" id="sale-3">-->
-<!--            <div class="container">-->
-<!--                <div class="sale-block">-->
-<!--                    <img src="img/sales/element.png" alt="" class="el">-->
-<!--                    <div class="sale-header">СКИДКА</div>-->
-<!--                    <div class="sale-offer">При подписании договора в день замера скидка 5%</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="sales-slider-slide sale-3" id="sale-3">
+            <div class="container-lg">
+                <div class="sale-block">
+                    <img src="img/sales/element.png" alt="" class="el">
+                    <div class="sale-header">СКИДКА</div>
+                    <div class="sale-offer">При подписании договора в день замера скидка 5%</div>
+                </div>
+            </div>
+        </div>
 
-<!--        <div class="sales-slider-slide sale-4" id="sale-4">-->
-<!--            <div class="container">-->
-<!--                <div class="sale-block">-->
-<!--                    <img src="img/sales/element.png" alt="" class="el">-->
-<!--                    <div class="sale-header">Подарок</div>-->
-<!--                    <div class="sale-offer">При заказе монтаже свыше 50м2 потолок в ванной в подарок!</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+        <div class="sales-slider-slide sale-4" id="sale-4">
+            <div class="container-lg">
+                <div class="sale-block">
+                    <img src="img/sales/element.png" alt="" class="el">
+                    <div class="sale-header">Подарок</div>
+                    <div class="sale-offer">При заказе монтаже свыше 50м2 потолок в ванной в подарок!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!--<section class="work">-->
 <!--    <div class="section-header-2">-->
@@ -691,14 +694,13 @@
         infinite: true,
         autoplaySpeed: 3000,
         dots: true,
-        dotsClass: "my-dots",
+        appendDots: '#sales-dots',
     });
 
     $(".reviews-slider").slick({
         arrows: false,
         infinite: true,
         dots: true,
-        dotsClass: "my-dots",
     });
 </script>
 </body>

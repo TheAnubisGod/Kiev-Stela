@@ -130,83 +130,36 @@ a {
 }
 
 // Slider
-.my-dots {
-  position: absolute;
-  bottom: -45px;
-  display: block;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
+.slick-dots {
+  display: inline-flex;
+  justify-content: center;
 
-.my-dots li {
-  position: relative;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer;
-}
+  margin: 0;
+  padding: 1rem 0;
 
-.my-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-  cursor: pointer;
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent;
-}
+  list-style-type: none;
 
-.my-dots li button:hover,
-.my-dots li button:focus {
-  outline: none;
-}
+  li {
+    margin: 0 0.25rem;
+  }
 
-.my-dots li button:hover:before,
-.my-dots li button:focus:before {
-  opacity: 1;
-}
+  button {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
 
-.my-dots li button:before {
-  font-family: 'slick';
-  font-size: 6px;
-  line-height: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: '•';
-  text-align: center;
-  opacity: .25;
-  color: black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    border: none;
+    border-radius: 100%;
+    background-color: #fff;
 
-  /* Обводка маркеров */
+    text-indent: -9999px;
+  }
 
-  /* WebKit (Safari/Chrome) Only */
-  -webkit-text-stroke: 1px red;
-  /* If we weren't using text-shadow, we'd set a fallback color
-     and use this to set color instead
-    -webkit-text-fill-color: white; */
-  text-shadow: 1px 1px 0 #f00, /* Simulated effect for Firefox and Opera
-       and nice enhancement for WebKit */
-  -1px -1px 0 #f00, 1px -1px 0 #f00, -1px 1px 0 #f00, 1px 1px 0 #f00;
-  /* / Обводка маркеров */
+  li.slick-active button {
+    background-color: #FF782C;
+  }
 
-}
-
-.my-dots li.slick-active button:before {
-  opacity: .75;
-  color: black;
 }
 
 .rotate180 {
@@ -412,7 +365,7 @@ a {
   background: #000;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
-  transition: 400ms linear;
+  transition: 300ms linear;
   @media (max-width: 992px) {
     display: block;
   }
@@ -1201,6 +1154,7 @@ $name-width: 40%;
   }
 }
 
+// Sales
 .steper {
   position: relative;
   width: 100%;
@@ -1217,8 +1171,31 @@ $name-width: 40%;
 }
 
 .sales {
+  position: relative;
+
+  .dots-pos {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+
+    #sales-dots {
+      padding-left: 22.5%;
+
+      ul {
+        transform: translateX(-50%);
+      }
+
+      @media(max-width: 992px) {
+        padding-left:50%;
+      }
+    }
+  }
+
   &-slider {
     width: 100%;
+    position: relative;
 
     &-slide {
       &:focus {
@@ -1229,12 +1206,30 @@ $name-width: 40%;
       align-items: center;
       height: 40rem !important;
 
+      @media(max-width: 992px) {
+        height: 60rem !important;
+        align-items: flex-end;
+      }
+
       .sale-block {
         position: relative;
         height: 28rem;
-        max-width: 50rem;
+        max-width: 45%;
         background: white;
         box-shadow: inset -8px -8px 68px rgba(0, 0, 0, 0.3);
+        @media (max-width: 992px) {
+          max-width: 100%;
+          margin-bottom: 6rem;
+        }
+        @media (max-width: 425px) {
+          .el{
+            height: 8rem !important;
+          }
+          .sale-header{
+            padding-top: 4rem !important;
+            font-size: 3rem !important;
+          }
+        }
 
         .el {
           position: absolute;
