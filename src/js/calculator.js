@@ -1,9 +1,56 @@
 let steps = document.querySelectorAll(".step")
 let current_step = 1;
+
+let data = {
+    square: 25,
+    ceiling_type: 0,
+    extra_elements: [],
+    contact_type: 0,
+    phone: ""
+}
+
+let element = document.getElementById('calc-phone');
+let maskOptions = {
+    mask: '+{7}-(000)-000-00-00'
+}
+let mask = IMask(element, maskOptions);
+
+function validate() {
+    function validate_square() {
+        return (data.square > 0 && data.square <= 50)
+    }
+
+    function validate_type() {
+        return (data.ceiling_type > 0 && data.ceiling_type <= 8)
+    }
+
+    function validate_extra_elements() {
+        if (data.extra_elements.length === 0) {
+            return false
+        }
+        data.extra_elements.forEach(function (elem) {
+            if (!(elem > 0 && elem <= 4)) {
+                return false
+            }
+        })
+        return true
+    }
+
+    function validate_contact_type() {
+        return (data.contact_type > 0 && data.contact_type <= 4)
+    }
+
+    function validate_phone() {
+        return (data.phone.length === 13)
+    }
+
+    return validate_square() && validate_type() && validate_extra_elements() && validate_contact_type() && validate_phone()
+}
+
 for (let i = 0; i < steps.length; i++) {
     let step = steps[i]
     step.style.left = (100).toString() + "%"
-    if (i === 0){
+    if (i === 0) {
         step.style.left = (0).toString() + "%"
     }
 }
@@ -12,15 +59,67 @@ let next_buttons = document.querySelectorAll(".btn-next")
 let prev_buttons = document.querySelectorAll(".btn-prev")
 
 for (let i = 0; i < next_buttons.length; i++) {
-    next_buttons[i].onclick = function (event) {
+    next_buttons[i].addEventListener("click", function (event) {
         steps[next_buttons[i].dataset.num].style.left = "0%"
         steps[next_buttons[i].dataset.num - 1].style.left = "-100%"
-    }
+    })
 }
 
-for (let i = 0; i < prev_buttons.length; i++) {
-    prev_buttons[i].onclick = function (event) {
-        steps[prev_buttons[i].dataset.num - 2].style.left = "0%"
-        steps[prev_buttons[i].dataset.num - 1].style.left = "+100%"
-    }
+document.getElementById("square").addEventListener("change", function () {
+    document.getElementById("square-val").innerText = this.value
+    data.square = parseInt(this.value)
+})
+
+for (let i = 1; i <= 8; i++) {
+    document.getElementById("calc-type-" + i.toString()).addEventListener("click", function (event) {
+        for (let i = 1; i <= 8; i++) {
+            document.getElementById("calc-type-" + i.toString()).classList.remove("calc-block-active")
+        }
+        if (data.ceiling_type !== i.toString()) {
+            this.classList.add("calc-block-active")
+            data.ceiling_type = i.toString()
+        } else {
+            data.ceiling_type = ""
+        }
+    })
 }
+
+for (let i = 1; i <= 4; i++) {
+    document.getElementById("calc-add-" + i.toString()).addEventListener("click", function (event) {
+        this.classList.remove("calc-block-active")
+        if (!data.extra_elements.includes(i)) {
+            document.getElementById("calc-add-" + i.toString()).classList.add("calc-block-active")
+            data.extra_elements.push(i)
+        } else {
+            data.extra_elements.splice(data.extra_elements.indexOf(i), 1)
+        }
+    })
+}
+
+for (let i = 1; i <= 4; i++) {
+    document.getElementById("calc-contact-" + i.toString()).addEventListener("click", function (event) {
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById("calc-contact-" + i.toString()).classList.remove("calc-block-active")
+        }
+        if (data.contact_type !== i.toString()) {
+            this.classList.add("calc-block-active")
+            data.contact_type = i.toString()
+        } else {
+            data.contact_type = ""
+        }
+    })
+}
+
+document.getElementById("calc-check").addEventListener("click", function () {
+    data.phone = "+7" + mask.unmaskedValue
+    if (validate()) {
+        console.log(data)
+    }
+})
+
+// for (let i = 0; i < prev_buttons.length; i++) {
+//     prev_buttons[i].addEventListener("click", function (event) {
+//         steps[prev_buttons[i].dataset.num - 2].style.left = "0%"
+//         steps[prev_buttons[i].dataset.num - 1].style.left = "+100%"
+//     })
+// }

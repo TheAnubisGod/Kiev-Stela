@@ -33,11 +33,6 @@ $(document).ready(function () {
         $(".main-arrow-left").toggleClass("rotate180")
         $(".main-arrow-right").toggleClass("rotate-180")
     })
-
-    // Calc
-    $("#square").on("change", function () {
-        document.getElementById("square-val").innerText = this.value
-    })
 });
 
 

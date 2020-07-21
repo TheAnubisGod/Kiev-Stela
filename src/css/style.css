@@ -574,6 +574,7 @@ a:hover {
 }
 
 .types {
+  overflow: hidden;
   padding-top: 15rem;
   padding-bottom: 2rem;
   background: #fff url("../img/types/bg.png") center bottom no-repeat;
@@ -939,7 +940,7 @@ a:hover {
 .calculator-wrap-body .calc-types-block .calc-block-header {
   font-weight: bold;
   height: 4rem;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-align: center;
   letter-spacing: 0.05em;
   width: 100%;
@@ -947,6 +948,11 @@ a:hover {
   line-height: 4rem;
   text-transform: uppercase;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1200px) {
+  .calculator-wrap-body .calc-types-block .calc-block-header {
+    font-size: 1.6rem;
+  }
 }
 .calculator-wrap-body .calc-material-block {
   cursor: pointer;
@@ -982,6 +988,9 @@ a:hover {
   margin: 0 1rem 2rem 1rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
+.calculator-wrap-body .calc-addition-block-2.calc-block-active {
+  background: #FFCC16;
+}
 .calculator-wrap-body .calc-addition-block-2 img {
   height: 100%;
 }
@@ -989,6 +998,11 @@ a:hover {
   font-size: 2rem;
   text-align: center;
   letter-spacing: 0.05em;
+}
+@media (max-width: 1200px) {
+  .calculator-wrap-body .calc-addition-block-2 span {
+    font-size: 1.6rem;
+  }
 }
 .calculator-wrap-body #calc-check {
   position: static;
@@ -1029,27 +1043,27 @@ a:hover {
   text-transform: uppercase;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-.calculator-wrap-body #classic {
+.calculator-wrap-body #calc-type-1 {
   background: url("../img/types/classic.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #perf {
+.calculator-wrap-body #calc-type-2 {
   background: url("../img/types/perforated.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #print {
+.calculator-wrap-body #calc-type-6 {
   background: url("../img/types/printed.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #layered {
+.calculator-wrap-body #calc-type-7 {
   background: url("../img/types/multi-layered.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #glide {
+.calculator-wrap-body #calc-type-5 {
   background: url("../img/types/gliding.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #star {
+.calculator-wrap-body #calc-type-3 {
   background: url("../img/types/star.png") center center;
   background-size: cover;
 }
@@ -1061,7 +1075,7 @@ a:hover {
   background: url("../img/types/mat.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #cloth {
+.calculator-wrap-body #calc-type-4 {
   background: url("../img/types/cloth.png") center center;
   background-size: cover;
 }
@@ -1069,23 +1083,23 @@ a:hover {
   background: url("../img/types/satin.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #chandelier {
+.calculator-wrap-body #calc-add-1 {
   background: url("../img/types/chandelier.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #lighter {
+.calculator-wrap-body #calc-add-2 {
   background: url("../img/types/lighters.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #light-lines {
+.calculator-wrap-body #calc-type-8 {
   background: url("../img/types/light-lines.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #light-lines-1 {
+.calculator-wrap-body #calc-add-3 {
   background: url("../img/types/light-lines.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #led {
+.calculator-wrap-body #calc-add-4 {
   background: url("../img/types/led.png") center center;
   background-size: cover;
 }

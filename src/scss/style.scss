@@ -615,6 +615,7 @@ a {
 // Types
 $name-width: 40%;
 .types {
+  overflow: hidden;
   padding-top: 15rem;
   padding-bottom: 2rem;
   background: #fff url("../img/types/bg.png") center bottom no-repeat;
@@ -1011,7 +1012,7 @@ $name-width: 40%;
         .calc-block-header {
           font-weight: bold;
           height: 4rem;
-          font-size: 18px;
+          font-size: 1.8rem;
           text-align: center;
           letter-spacing: 0.05em;
           width: 100%;
@@ -1019,6 +1020,9 @@ $name-width: 40%;
           line-height: 4rem;
           text-transform: uppercase;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+          @media (max-width: 1200px) {
+            font-size: 1.6rem;
+          }
         }
       }
 
@@ -1061,6 +1065,10 @@ $name-width: 40%;
         margin: 0 1rem 2rem 1rem;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 
+        &.calc-block-active {
+          background: $imp-text-color;
+        }
+
         img {
           height: 100%;
         }
@@ -1069,6 +1077,9 @@ $name-width: 40%;
           font-size: 2rem;
           text-align: center;
           letter-spacing: 0.05em;
+          @media (max-width: 1200px) {
+            font-size: 1.6rem;
+          }
         }
       }
 
@@ -1118,32 +1129,32 @@ $name-width: 40%;
         }
       }
 
-      #classic {
+      #calc-type-1 {
         background: url("../img/types/classic.png") center center;
         background-size: cover;
       }
 
-      #perf {
+      #calc-type-2 {
         background: url("../img/types/perforated.png") center center;
         background-size: cover;
       }
 
-      #print {
+      #calc-type-6 {
         background: url("../img/types/printed.png") center center;
         background-size: cover;
       }
 
-      #layered {
+      #calc-type-7 {
         background: url("../img/types/multi-layered.png") center center;
         background-size: cover;
       }
 
-      #glide {
+      #calc-type-5 {
         background: url("../img/types/gliding.png") center center;
         background-size: cover;
       }
 
-      #star {
+      #calc-type-3 {
         background: url("../img/types/star.png") center center;
         background-size: cover;
       }
@@ -1158,7 +1169,7 @@ $name-width: 40%;
         background-size: cover;
       }
 
-      #cloth {
+      #calc-type-4 {
         background: url("../img/types/cloth.png") center center;
         background-size: cover;
       }
@@ -1168,27 +1179,27 @@ $name-width: 40%;
         background-size: cover;
       }
 
-      #chandelier {
+      #calc-add-1 {
         background: url("../img/types/chandelier.png") center center;
         background-size: cover;
       }
 
-      #lighter {
+      #calc-add-2 {
         background: url("../img/types/lighters.png") center center;
         background-size: cover;
       }
 
-      #light-lines {
+      #calc-type-8 {
         background: url("../img/types/light-lines.png") center center;
         background-size: cover;
-
-        &-1 {
-          background: url("../img/types/light-lines.png") center center;
-          background-size: cover;
-        }
       }
 
-      #led {
+      #calc-add-3 {
+        background: url("../img/types/light-lines.png") center center;
+        background-size: cover;
+      }
+
+      #calc-add-4 {
         background: url("../img/types/led.png") center center;
         background-size: cover;
       }
@@ -1472,11 +1483,12 @@ $name-width: 40%;
     &-header {
       text-align: center;
       margin-bottom: 2rem;
-      
-      #work-block-header-1{
+
+      #work-block-header-1 {
         z-index: 1;
         position: relative;
-        &:before{
+
+        &:before {
           z-index: -1;
           color: $imp-text-color;
           content: "1";
@@ -1487,10 +1499,12 @@ $name-width: 40%;
           font-weight: 900;
         }
       }
-      #work-block-header-2{
+
+      #work-block-header-2 {
         z-index: 1;
         position: relative;
-        &:before{
+
+        &:before {
           z-index: -1;
           color: $imp-text-color;
           content: "2";
@@ -1501,10 +1515,12 @@ $name-width: 40%;
           font-weight: 900;
         }
       }
-      #work-block-header-3{
+
+      #work-block-header-3 {
         z-index: 1;
         position: relative;
-        &:before{
+
+        &:before {
           z-index: -1;
           color: $imp-text-color;
           content: "3";
@@ -1515,10 +1531,12 @@ $name-width: 40%;
           font-weight: 900;
         }
       }
-      #work-block-header-4{
+
+      #work-block-header-4 {
         z-index: 1;
         position: relative;
-        &:before{
+
+        &:before {
           z-index: -1;
           color: $imp-text-color;
           content: "4";
@@ -1529,10 +1547,12 @@ $name-width: 40%;
           font-weight: 900;
         }
       }
-      #work-block-header-5{
+
+      #work-block-header-5 {
         z-index: 1;
         position: relative;
-        &:before{
+
+        &:before {
           z-index: -1;
           color: $imp-text-color;
           content: "5";
@@ -1879,26 +1899,29 @@ $name-width: 40%;
 }
 
 .footer {
-  &-desktop{
+  &-desktop {
     background: #000;
-    &-in{
+
+    &-in {
       padding: 3rem 0;
       display: flex;
       justify-content: space-between;
     }
+
     .menu-block {
       display: inline-block;
       text-align: center;
 
-      .link-block{
+      .link-block {
         display: inline-block;
         padding: 0 1rem;
       }
-      .phones{
+
+      .phones {
         margin-top: 4.5rem;
       }
 
-      .logo{
+      .logo {
         max-width: 15rem;
       }
 
@@ -1917,7 +1940,8 @@ $name-width: 40%;
         color: #fff;
         font-size: 1.5rem;
         text-transform: uppercase;
-        a{
+
+        a {
           font-size: 1.5rem !important;
           margin: 0;
           font-weight: normal;
@@ -1925,6 +1949,7 @@ $name-width: 40%;
             font-size: 1.2rem !important;
           }
         }
+
         @media (max-width: 1200px) {
           font-size: 1.2rem;
         }
@@ -1942,10 +1967,12 @@ $name-width: 40%;
         }
       }
     }
+
     @media (max-width: 992px) {
       display: none;
     }
   }
+
   &-mobile {
     display: none;
     @media (max-width: 992px) {
@@ -2002,13 +2029,15 @@ $name-width: 40%;
           color: #fff;
           font-size: 3rem !important;
           text-transform: uppercase;
-          a{
+
+          a {
             font-size: 3rem !important;
             margin: 0;
             @media (max-width: 576px) {
               font-size: 2.5rem !important;
             }
           }
+
           @media (max-width: 576px) {
             font-size: 2.5rem !important;
           }
