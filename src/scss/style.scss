@@ -40,7 +40,7 @@
 
 // Variables
 $imp-text-color: #FFCC16;
-$menu-height: 6rem;
+$menu-height: 4rem;
 
 // General Settings
 body, html {
@@ -54,7 +54,7 @@ input:focus, a:focus, button:focus {
 
 a {
   color: #fff;
-  font-size: 12px;
+  font-size: 1.4rem;
 
   &:hover {
     color: $imp-text-color;
@@ -76,7 +76,7 @@ a {
     font-size: 3.6rem;
   }
   @media (max-width: 576px) {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   @media (max-width: 425px) {
     font-size: 2.5rem;
@@ -97,11 +97,14 @@ a {
   @media (max-width: 992px) {
     font-size: 3.6rem;
   }
+  @media (max-width: 768px) {
+    font-size: 3.2rem;
+  }
   @media (max-width: 576px) {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   @media (max-width: 425px) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -126,6 +129,10 @@ a {
     font-size: 2.5rem;
     margin: 3rem 0;
   }
+}
+
+.h100vh {
+  height: 100vh;
 }
 
 .phone-link {
@@ -238,8 +245,11 @@ a {
       color: #000 !important;
       padding: 2rem 2rem 2rem 4rem;
       margin: 0 !important;
-      @media (max-width: 425px) {
+      @media (max-width: 768px) {
         padding: 1rem 1rem 1rem 2rem;
+      }
+      @media (max-width: 425px) {
+        padding: 0.5rem 0.5rem 0.5rem 2rem;
       }
     }
   }
@@ -286,6 +296,7 @@ a {
 }
 
 .main-header-desktop {
+  font-size: 1.4rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -295,8 +306,13 @@ a {
   height: $menu-height;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
+  transition: all 300ms ease;
   @media (max-width: 992px) {
     display: none;
+  }
+
+  &.out {
+    transform: translateY(-100%);
   }
 
   &-in {
@@ -323,8 +339,13 @@ a {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 5;
+  transition: 300ms linear;
   @media (max-width: 992px) {
     display: block;
+  }
+
+  &.out {
+    transform: translateX(-50%) translateY(-200%);
   }
 }
 
@@ -398,6 +419,7 @@ a {
 
 .main-arrows {
   display: none;
+  transform: none;
   height: $menu-height;
   position: fixed;
   top: 0;
@@ -406,9 +428,13 @@ a {
   background: #000;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
-  transition: 300ms linear;
+  transition: all 300ms linear;
   @media (max-width: 992px) {
     display: block;
+  }
+
+  &.out {
+    transform: translateY(-100%) !important;
   }
 }
 
@@ -729,10 +755,18 @@ $name-width: 40%;
         display: inline-block;
       }
 
+      .btns {
+        max-height: 100rem;
+      }
+
       @media (min-width: 992px) {
         .types-block-name {
           width: 50%;
           transition: 0.3s linear;
+
+          .btns {
+            max-height: 100rem !important;
+          }
 
           .info-btn {
             display: block;
@@ -763,6 +797,14 @@ $name-width: 40%;
       height: 100%;
       width: $name-width;
       transition: 0.3s linear;
+
+      .btns {
+        max-height: 0;
+        transition: 1000ms ease;
+        @media (max-width: 992px) {
+          max-height: 100rem;
+        }
+      }
 
       &-in {
         text-align: center;
@@ -925,26 +967,54 @@ $name-width: 40%;
   &-wrap {
     position: relative;
     width: 100%;
-    height: 500px;
+    min-height: 50rem;
     background: url("../img/calculator/bg.png") center center no-repeat;
+    background-size: cover;
 
     &-header {
       background: #FFCC16;
       mix-blend-mode: multiply;
-      height: 50px;
+      height: 5rem;
       width: 100%;
-      font-size: 24px;
-      line-height: 50px;
+      font-size: 2.4rem;
+      line-height: 5rem;
       text-align: center;
+      @media (max-width: 576px) {
+        font-size: 1.8rem;
+      }
+      @media (max-width: 425px) {
+        font-size: 1.4rem;
+      }
     }
 
     &-body {
+      padding: 5rem 0;
       text-align: center;
       position: relative;
-      height: 450px;
+      min-height: 45rem;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      .calc-man {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      .calc-row-1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .calc-sub-row {
+        width: 50%;
+        display: inline-block;
+        @media (max-width: 992px) {
+          display: block;
+          width: 100%;
+        }
+      }
 
       .btn-next {
         display: inline-flex;
@@ -959,7 +1029,7 @@ $name-width: 40%;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         font-style: normal;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 1.8rem;
         text-align: center;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -971,7 +1041,7 @@ $name-width: 40%;
         width: 100%;
 
         .show-square {
-          font-size: 36px;
+          font-size: 3.6rem;
           font-weight: bold;
         }
       }
@@ -979,7 +1049,7 @@ $name-width: 40%;
       .calc-end-msg {
         font-style: normal;
         font-weight: 900;
-        font-size: 24px;
+        font-size: 2.4rem;
         line-height: 131%;
         text-align: center;
         max-width: 45%;
@@ -1003,6 +1073,16 @@ $name-width: 40%;
         margin: 0 0.5rem 1rem 0.5rem;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 
+        @media (max-width: 992px) {
+          width: 40%;
+        }
+        @media (max-width: 576px) {
+          height: 12rem;
+        }
+        @media (max-width: 425px) {
+          height: 10rem;
+        }
+
         &.calc-block-active {
           .calc-block-header {
             background: $imp-text-color;
@@ -1023,34 +1103,14 @@ $name-width: 40%;
           @media (max-width: 1200px) {
             font-size: 1.6rem;
           }
-        }
-      }
-
-      .calc-material-block {
-        cursor: pointer;
-        display: inline-block;
-        background: $imp-text-color;
-        width: 30%;
-        height: 15rem;
-        margin: 0 0.5rem 1rem 0.5rem;
-
-        &.calc-block-active {
-          .calc-block-header {
-            background: $imp-text-color;
+          @media (max-width: 576px) {
+            font-size: 1.2rem;
           }
-        }
-
-        .calc-block-header {
-          font-weight: bold;
-          height: 4rem;
-          font-size: 18px;
-          text-align: center;
-          letter-spacing: 0.05em;
-          width: 100%;
-          background: #fff;
-          line-height: 4rem;
-          text-transform: uppercase;
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+          @media (max-width: 425px) {
+            font-size: 0.9rem;
+            height: 3rem;
+            line-height: 3rem;
+          }
         }
       }
 
@@ -1064,13 +1124,31 @@ $name-width: 40%;
         height: 6rem;
         margin: 0 1rem 2rem 1rem;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        @media (max-width: 992px) {
+          display: inline-block;
+          height: auto;
+        }
+        @media (max-width: 768px) {
+          width: 40%;
+        }
+        @media (max-width: 576px) {
+          width: 44%;
+        }
+        @media (max-width: 425px) {
+          margin: 0 0.5rem 1rem 0.5rem;
+          width: 45%;
+        }
 
         &.calc-block-active {
           background: $imp-text-color;
         }
 
         img {
-          height: 100%;
+          height: 5rem;
+          @media (max-width: 992px) {
+            display: block;
+            margin: 1rem auto;
+          }
         }
 
         span {
@@ -1080,6 +1158,17 @@ $name-width: 40%;
           @media (max-width: 1200px) {
             font-size: 1.6rem;
           }
+          @media (max-width: 992px) {
+            display: block;
+            width: 100%;
+            font-size: 1.4rem;
+          }
+          @media (max-width: 576px) {
+            font-size: 1.2rem;
+          }
+          @media (max-width: 425px) {
+            font-size: 1.3rem;
+          }
         }
       }
 
@@ -1087,9 +1176,14 @@ $name-width: 40%;
         position: static;
         transform: none;
         height: 4rem;
+        @media (max-width: 425px) {
+          font-size: 1.4rem;
+          text-align: center;
+        }
       }
 
       #calc-phone {
+        text-align: center;
         height: 4rem;
         border: none;
         width: 30rem;
@@ -1098,6 +1192,9 @@ $name-width: 40%;
         color: rgba(0, 0, 0, 0.5);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         margin-bottom: 2rem;
+        @media (max-width: 425px) {
+          width: 25rem;
+        }
       }
 
       .calc-addition-block {
@@ -1108,6 +1205,12 @@ $name-width: 40%;
         height: 15rem;
         margin: 0 0.5rem 1rem 0.5rem;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        @media (max-width: 992px) {
+          width: 40%;
+        }
+        @media (max-width: 576px) {
+          height: 12rem;
+        }
 
         &.calc-block-active {
           .calc-block-header {
@@ -1126,6 +1229,17 @@ $name-width: 40%;
           line-height: 4rem;
           text-transform: uppercase;
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+          @media (max-width: 1200px) {
+            font-size: 1.6rem;
+          }
+          @media (max-width: 576px) {
+            font-size: 1.2rem;
+          }
+          @media (max-width: 425px) {
+            font-size: 0.9rem;
+            height: 3rem;
+            line-height: 3rem;
+          }
         }
       }
 
@@ -1210,6 +1324,9 @@ $name-width: 40%;
         -webkit-appearance: none;
         background-color: #fff;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        @media (max-width: 576px) {
+          width: 90%;
+        }
       }
 
       input[type='range']::-webkit-slider-runnable-track {
@@ -1251,8 +1368,9 @@ $name-width: 40%;
 .steper {
   position: relative;
   width: 100%;
-  min-height: 50rem;
-  overflow: hidden;
+  height: 50rem;
+  overflow-x: hidden;
+  transition: height 300ms linear;
 
   .step {
     position: absolute;
@@ -1415,15 +1533,7 @@ $name-width: 40%;
       bottom: -27rem;
     }
     @media (max-width: 992px) {
-      top: 10rem;
-    }
-    @media (max-width: 768px) {
-      top: 20rem;
-      height: 25rem;
-    }
-    @media (max-width: 425px) {
-      top: 16rem;
-      height: 20rem;
+      display: none;
     }
   }
 
@@ -1811,7 +1921,7 @@ $name-width: 40%;
     width: 40rem;
     bottom: -2.7rem;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     @media (max-width: 1200px) {
       width: 32rem;
       bottom: -2.1rem;

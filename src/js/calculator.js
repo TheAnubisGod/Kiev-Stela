@@ -62,6 +62,11 @@ for (let i = 0; i < next_buttons.length; i++) {
     next_buttons[i].addEventListener("click", function (event) {
         steps[next_buttons[i].dataset.num].style.left = "0%"
         steps[next_buttons[i].dataset.num - 1].style.left = "-100%"
+        if (i === 0) {
+            document.querySelector(".steper").style.height = "78rem"
+        } else {
+            document.querySelector(".steper").style.height = "50rem"
+        }
     })
 }
 
