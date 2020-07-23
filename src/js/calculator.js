@@ -15,35 +15,35 @@ let maskOptions = {
 }
 let mask = IMask(element, maskOptions);
 
-function validate() {
-    function validate_square() {
-        return (data.square > 0 && data.square <= 50)
-    }
+function validate_square() {
+    return (data.square > 0 && data.square <= 50)
+}
 
-    function validate_type() {
-        return (data.ceiling_type > 0 && data.ceiling_type <= 8)
-    }
+function validate_type() {
+    return (data.ceiling_type > 0 && data.ceiling_type <= 8)
+}
 
-    function validate_extra_elements() {
-        if (data.extra_elements.length === 0) {
+function validate_extra_elements() {
+    if (data.extra_elements.length === 0) {
+        return false
+    }
+    data.extra_elements.forEach(function (elem) {
+        if (!(elem > 0 && elem <= 4)) {
             return false
         }
-        data.extra_elements.forEach(function (elem) {
-            if (!(elem > 0 && elem <= 4)) {
-                return false
-            }
-        })
-        return true
-    }
+    })
+    return true
+}
 
-    function validate_contact_type() {
-        return (data.contact_type > 0 && data.contact_type <= 4)
-    }
+function validate_contact_type() {
+    return (data.contact_type > 0 && data.contact_type <= 4)
+}
 
-    function validate_phone() {
-        return (data.phone.length === 13)
-    }
+function validate_phone() {
+    return (data.phone.length === 13)
+}
 
+function validate() {
     return validate_square() && validate_type() && validate_extra_elements() && validate_contact_type() && validate_phone()
 }
 
@@ -58,17 +58,58 @@ for (let i = 0; i < steps.length; i++) {
 let next_buttons = document.querySelectorAll(".btn-next")
 let prev_buttons = document.querySelectorAll(".btn-prev")
 
-for (let i = 0; i < next_buttons.length; i++) {
-    next_buttons[i].addEventListener("click", function (event) {
-        steps[next_buttons[i].dataset.num].style.left = "0%"
-        steps[next_buttons[i].dataset.num - 1].style.left = "-100%"
-        if (i === 0) {
-            document.querySelector(".steper").style.height = "78rem"
-        } else {
-            document.querySelector(".steper").style.height = "50rem"
-        }
-    })
-}
+// for (let i = 0; i < next_buttons.length; i++) {
+//     next_buttons[i].addEventListener("click", function (event) {
+//         steps[next_buttons[i].dataset.num].style.left = "0%"
+//         steps[next_buttons[i].dataset.num - 1].style.left = "-100%"
+//         if (i === 0 && window.innerWidth <= 992) {
+//             document.querySelector(".steper").style.height = "78rem"
+//         } else {
+//             document.querySelector(".steper").style.height = "50rem"
+//         }
+//     })
+// }
+next_buttons[0].addEventListener("click", function (event) {
+    if (!validate_square()){
+        return
+    }
+    steps[next_buttons[0].dataset.num].style.left = "0%"
+    steps[next_buttons[0].dataset.num - 1].style.left = "-100%"
+    if (window.innerWidth <= 992) {
+        document.querySelector(".steper").style.height = "78rem"
+    }
+    if (window.innerWidth <= 576) {
+        document.querySelector(".steper").style.height = "67rem"
+    }
+    if (window.innerWidth <= 425) {
+        document.querySelector(".steper").style.height = "59rem"
+    }
+})
+
+next_buttons[1].addEventListener("click", function (event) {
+    if (!validate_type()){
+        return
+    }
+    steps[next_buttons[1].dataset.num].style.left = "0%"
+    steps[next_buttons[1].dataset.num - 1].style.left = "-100%"
+    document.querySelector(".steper").style.height = "50rem"
+})
+
+next_buttons[2].addEventListener("click", function (event) {
+    if (!validate_extra_elements()){
+        return
+    }
+    steps[next_buttons[2].dataset.num].style.left = "0%"
+    steps[next_buttons[2].dataset.num - 1].style.left = "-100%"
+})
+
+next_buttons[3].addEventListener("click", function (event) {
+    if (!validate()){
+        return
+    }
+    steps[next_buttons[3].dataset.num].style.left = "0%"
+    steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
+})
 
 document.getElementById("square").addEventListener("change", function () {
     document.getElementById("square-val").innerText = this.value

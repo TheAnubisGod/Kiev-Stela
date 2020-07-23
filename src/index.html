@@ -13,6 +13,23 @@
 </head>
 <body>
 
+<div class="modal-window-bg hidden">
+    <div class="modal-window">
+        <button class="close-btn"><img src="img/modal/close.png" alt=""></button>
+        <div class="modal-window-header">
+            Заказать <span id="ceiling-type-name"></span> потолок!
+        </div>
+        <div class="modal-window-content">
+            <img src="img/request/man.png" alt="" class="modal-window-man">
+            <form action="">
+                <input placeholder="Ваше имя" type="text">
+                <input placeholder="Ваш телефон" type="tel">
+                <button type="submit">Оставить заявку</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <img src="img/main/logo.png" alt="" class="logo-mobile">
 <div class="top-horizon"></div>
 
@@ -22,11 +39,11 @@
             <div class="menu-block-header">
                 Главная
             </div>
-            <a href="">Калькулятор</a>
-            <a href="">Акции</a>
-            <a href="">Работы</a>
-            <a href="">О нас</a>
-            <a href="">Контакты</a>
+            <a href="#calculator" class="native-link">Калькулятор</a>
+            <a href="#sales" class="native-link">Акции</a>
+            <a href="#work" class="native-link">Работы</a>
+            <a href="#about" class="native-link">О нас</a>
+            <a href="#contacts" class="native-link">Контакты</a>
         </div>
         <div class="menu-block">
             <div class="menu-block-header">
@@ -68,19 +85,19 @@
                 </div>
                 <div class="block-in-wrap">
                     <div class="block block-in">
-                        <span><a href="">Калькулятор</a></span>
+                        <span><a href="#calculator">Калькулятор</a></span>
                     </div>
                     <div class="block block-in">
-                        <span><a href="">Акции</a></span>
+                        <span><a href="#sales">Акции</a></span>
                     </div>
                     <div class="block block-in">
-                        <span><a href="">Работа</a></span>
+                        <span><a href="#work">Работа</a></span>
                     </div>
                     <div class="block block-in">
-                        <span><a href="">О нас</a></span>
+                        <span><a href="#about">О нас</a></span>
                     </div>
                     <div class="block block-in">
-                        <span><a href="">Контакты</a></span>
+                        <span><a href="#contacts">Контакты</a></span>
                     </div>
                 </div>
             </div>
@@ -174,7 +191,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="1">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -190,7 +207,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="2">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -207,7 +224,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="3">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -223,7 +240,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="4">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -240,7 +257,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="5">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -256,7 +273,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="6">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -273,7 +290,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="7">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -289,7 +306,7 @@
                                 <img src="img/types/line.png" alt="" class="line">
                                 <button class="info-btn">Подробнее</button>
                                 <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn">Заказать</button>
+                                <button class="order-btn" data-ceiling-type="8">Заказать</button>
                                 <img src="img/types/line.png" alt="" class="line">
                             </div>
                         </div>
@@ -300,7 +317,9 @@
     </div>
 </section>
 
-<section class="calculator">
+<section class="calculator" id="calculator">
+    <img src="img/calculator/drill.png" alt="" class="drill">
+    <img src="img/calculator/side-cutters.png" alt="" class="side-cutters">
     <div class="section-header-2">Калькулятор <br>стоимости</div>
     <div class="steper">
         <div class="step">
@@ -462,7 +481,7 @@
     </div>
 </section>
 
-<section class="sales">
+<section class="sales" id="sales">
     <div class="section-header-2">
         Акции
     </div>
@@ -518,7 +537,7 @@
     </div>
 </section>
 
-<section class="work">
+<section class="work" id="work">
     <img src="img/work/screwdriver.png" alt="screwdriver" class="screwdriver">
     <img src="img/work/helmet.png" alt="screwdriver" class="helmet">
     <div class="section-header-2">
@@ -595,8 +614,7 @@
     </div>
 </section>
 
-<section class="about">
-    <img class="man-1" src="img/about/man.png" alt="">
+<section class="about" id="about">
     <div class="about-col"></div>
     <div class="section-header-1">
         О нас
@@ -772,7 +790,7 @@
     </div>
 </section>
 
-<section class="footer-desktop">
+<section class="footer-desktop" id="contacts">
     <div class="container">
         <div class="footer-desktop-in">
             <div class="menu-block">
@@ -836,6 +854,7 @@
 <script src="js/wow.min.js"></script>
 
 <script src="js/main.js"></script>
+<script src="js/modal.js"></script>
 <script src="js/calculator.js"></script>
 <script>
     new WOW().init();
