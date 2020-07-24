@@ -1839,7 +1839,7 @@ a:hover {
   z-index: 1;
   position: absolute;
   top: 50%;
-  right: -1.9rem;
+  right: -2.3rem;
   transform: translateY(-50%);
   height: 6.4rem;
   width: 1.95rem;
@@ -1851,7 +1851,7 @@ a:hover {
   z-index: 1;
   position: absolute;
   top: 50%;
-  left: -1.9rem;
+  left: -2.3rem;
   transform: translateY(-50%);
   height: 6.4rem;
   width: 1.95rem;
@@ -1863,7 +1863,13 @@ a:hover {
   border-radius: 50%;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
 }
+@media (max-width: 425px) {
+  .about .reviews-slider .user img {
+    height: 7rem;
+  }
+}
 .about .reviews-slider .user h1 {
+  font-size: 2.8rem;
   font-weight: bold;
 }
 @media (max-width: 576px) {
@@ -1900,7 +1906,7 @@ a:hover {
   }
 }
 .about .reviews-body {
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
 }
 .about .reviews-body p {
   font-size: 1.8rem;

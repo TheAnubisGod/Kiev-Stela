@@ -1917,7 +1917,7 @@ $name-width: 40%;
         z-index: 1;
         position: absolute;
         top: 50%;
-        right: -1.9rem;
+        right: -2.3rem;
         transform: translateY(-50%);
         height: 6.4rem;
         width: 1.95rem;
@@ -1930,7 +1930,7 @@ $name-width: 40%;
         z-index: 1;
         position: absolute;
         top: 50%;
-        left: -1.9rem;
+        left: -2.3rem;
         transform: translateY(-50%);
         height: 6.4rem;
         width: 1.95rem;
@@ -1944,9 +1944,13 @@ $name-width: 40%;
         img {
           border-radius: 50%;
           box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+          @media (max-width: 425px) {
+            height: 7rem;
+          }
         }
 
         h1 {
+          font-size: 2.8rem;
           font-weight: bold;
           @media (max-width: 576px) {
             font-size: 2.4rem !important;
@@ -1982,7 +1986,7 @@ $name-width: 40%;
     }
 
     &-body {
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
 
       p {
         font-size: 1.8rem;
