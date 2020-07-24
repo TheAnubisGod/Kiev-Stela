@@ -11,7 +11,7 @@ let data = {
 
 let element = document.getElementById('calc-phone');
 let maskOptions = {
-    mask: '+{7}-(000)-000-00-00'
+    mask: '+{38}-(000)-000-00-00'
 }
 let mask = IMask(element, maskOptions);
 
@@ -24,11 +24,11 @@ function validate_type() {
 }
 
 function validate_extra_elements() {
-    if (data.extra_elements.length === 0) {
+    if (data.extra_elements.length < 0 && data.extra_elements.length > 4) {
         return false
     }
     data.extra_elements.forEach(function (elem) {
-        if (!(elem > 0 && elem <= 4)) {
+        if (!(elem => 0 && elem <= 4)) {
             return false
         }
     })
@@ -58,19 +58,8 @@ for (let i = 0; i < steps.length; i++) {
 let next_buttons = document.querySelectorAll(".btn-next")
 let prev_buttons = document.querySelectorAll(".btn-prev")
 
-// for (let i = 0; i < next_buttons.length; i++) {
-//     next_buttons[i].addEventListener("click", function (event) {
-//         steps[next_buttons[i].dataset.num].style.left = "0%"
-//         steps[next_buttons[i].dataset.num - 1].style.left = "-100%"
-//         if (i === 0 && window.innerWidth <= 992) {
-//             document.querySelector(".steper").style.height = "78rem"
-//         } else {
-//             document.querySelector(".steper").style.height = "50rem"
-//         }
-//     })
-// }
 next_buttons[0].addEventListener("click", function (event) {
-    if (!validate_square()){
+    if (!validate_square()) {
         return
     }
     steps[next_buttons[0].dataset.num].style.left = "0%"
@@ -87,7 +76,7 @@ next_buttons[0].addEventListener("click", function (event) {
 })
 
 next_buttons[1].addEventListener("click", function (event) {
-    if (!validate_type()){
+    if (!validate_type()) {
         return
     }
     steps[next_buttons[1].dataset.num].style.left = "0%"
@@ -96,7 +85,7 @@ next_buttons[1].addEventListener("click", function (event) {
 })
 
 next_buttons[2].addEventListener("click", function (event) {
-    if (!validate_extra_elements()){
+    if (!validate_extra_elements()) {
         return
     }
     steps[next_buttons[2].dataset.num].style.left = "0%"
@@ -104,14 +93,14 @@ next_buttons[2].addEventListener("click", function (event) {
 })
 
 next_buttons[3].addEventListener("click", function (event) {
-    if (!validate()){
+    if (!validate()) {
         return
     }
     steps[next_buttons[3].dataset.num].style.left = "0%"
     steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
 })
 
-document.getElementById("square").addEventListener("change", function () {
+document.getElementById("square").addEventListener("input", function () {
     document.getElementById("square-val").innerText = this.value
     data.square = parseInt(this.value)
 })
@@ -157,7 +146,7 @@ for (let i = 1; i <= 4; i++) {
 }
 
 document.getElementById("calc-check").addEventListener("click", function () {
-    data.phone = "+7" + mask.unmaskedValue
+    data.phone = "+" + mask.unmaskedValue
     if (validate()) {
         console.log(data)
     }

@@ -43,27 +43,43 @@ $imp-text-color: #FFCC16;
 $menu-height: 4rem;
 
 // General Settings
-@media only screen and (max-width: 768px) {
-  .animate__animated {
-    /*CSS transitions*/
-    -o-transition-property: none !important;
-    -moz-transition-property: none !important;
-    -ms-transition-property: none !important;
-    -webkit-transition-property: none !important;
-    transition-property: none !important;
-    /*CSS transforms*/
-    -o-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
-    -webkit-transform: none !important;
-    transform: none !important;
-    /*CSS animations*/
-    -webkit-animation: none !important;
-    -moz-animation: none !important;
-    -o-animation: none !important;
-    -ms-animation: none !important;
-    animation: none !important;
-  }
+.media {
+  display: -webkit-box;
+  display: flex;
+  margin-left: -1rem;
+}
+
+.media-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.media--reversed {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
+}
+
+.media--align-center {
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.media--align-end {
+  -webkit-box-align: end;
+  align-items: end;
+}
+
+.media img {
+  flex-shrink: 0;
+}
+
+.media__content {
+  padding-left: 1rem;
+  -webkit-box-flex: 1;
+  flex: 1;
 }
 
 body, html {
@@ -97,11 +113,18 @@ a {
   @media (max-width: 992px) {
     color: $imp-text-color;
     font-size: 3.6rem;
+    letter-spacing: 0.8em;
+  }
+  @media (max-width: 768px) {
+    letter-spacing: 0.7em;
+    font-size: 3.2rem;
   }
   @media (max-width: 576px) {
+    letter-spacing: 0.6em;
     font-size: 2.8rem;
   }
   @media (max-width: 425px) {
+    letter-spacing: 0.5em;
     font-size: 2.5rem;
   }
 }
@@ -120,14 +143,18 @@ a {
   @media (max-width: 992px) {
     font-weight: 900;
     font-size: 3.6rem;
+    letter-spacing: 0.8em;
   }
   @media (max-width: 768px) {
+    letter-spacing: 0.7em;
     font-size: 3.2rem;
   }
   @media (max-width: 576px) {
+    letter-spacing: 0.6em;
     font-size: 2.4rem;
   }
   @media (max-width: 425px) {
+    letter-spacing: 0.5em;
     font-size: 1.8rem;
   }
 }
@@ -433,6 +460,10 @@ a {
       }
     }
 
+    .menu {
+      height: $menu-height;
+    }
+
     .phone-link {
       margin: 2rem 0;
       font-size: 3.2rem;
@@ -589,10 +620,13 @@ a {
     p {
       font-style: normal;
       font-weight: normal;
-      font-size: 18px;
+      font-size: 1.8rem;
       letter-spacing: 0.05em;
       color: #FFFFFF;
       margin-bottom: 4rem;
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
 
       b {
         font-weight: bolder;
@@ -709,11 +743,16 @@ $name-width: 40%;
     padding-top: 7rem;
   }
 
+  .row {
+    text-align: center;
+  }
+
   .types-block {
     position: relative;
+    display: inline-block;
     overflow: hidden;
-    margin: 0.5rem 0;
-    width: 100%;
+    margin: 0.5rem 0.5%;
+    width: 48%;
     height: 18rem;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 
@@ -722,7 +761,9 @@ $name-width: 40%;
     }
 
     @media (max-width: 992px) {
+      width: 100%;
       height: 25rem;
+      margin: 0.5rem 0;
       .order-btn {
         height: 3rem;
         font-size: 1.4rem;
@@ -882,6 +923,7 @@ $name-width: 40%;
         letter-spacing: 0.2em;
         color: #000000;
         background: transparent;
+        transition: .3s;
         @media (max-width: 992px) {
           font-size: 3rem;
           width: 30rem;
@@ -900,14 +942,18 @@ $name-width: 40%;
 
 
         &:hover {
-          background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 52.08%, rgba(0, 0, 0, 0) 100%);
+          background: rgba(0, 0, 0, 0.5);
           color: #fff;
-          transition: background 3s;
+          border-radius: 1rem;
+          transition: background .3s;
         }
 
         &:focus {
-          background: #000000;
-          color: #fff;
+          @media (min-width: 992px) {
+            background: #000000;
+            color: #fff;
+            border-radius: 1rem;
+          }
         }
       }
 
@@ -925,6 +971,7 @@ $name-width: 40%;
         letter-spacing: 0.2em;
         color: #000000;
         background: transparent;
+        transition: .3s;
         @media (max-width: 992px) {
           font-size: 3rem;
           width: 30rem;
@@ -943,11 +990,15 @@ $name-width: 40%;
 
 
         &:hover {
-          background: linear-gradient(270deg, rgba(255, 204, 22, 0) 0%, #FFCC16 52.08%, rgba(255, 204, 22, 0) 100%);
+          background: rgba(255, 204, 22, 0.5);
+          border-radius: 1rem;
         }
 
         &:focus {
-          background: $imp-text-color;
+          @media (min-width: 992px) {
+            background: $imp-text-color;
+            border-radius: 1rem;
+          }
         }
       }
 
@@ -1240,6 +1291,9 @@ $name-width: 40%;
             display: block;
             margin: 1rem auto;
           }
+          @media (max-width: 425px) {
+            height: 4rem;
+          }
         }
 
         span {
@@ -1258,7 +1312,7 @@ $name-width: 40%;
             font-size: 1.2rem;
           }
           @media (max-width: 425px) {
-            font-size: 1.3rem;
+            font-size: 0.9rem;
           }
         }
       }
@@ -1853,6 +1907,14 @@ $name-width: 40%;
     @media (max-width: 992px) {
       width: 100%;
       position: static;
+    }
+
+    #reviews-dots {
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     &-slider {

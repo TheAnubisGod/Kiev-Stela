@@ -5,11 +5,11 @@
     <title>Київ-стеля</title>
     <meta name="viewport" content="width=device-width">
     <!--Styles-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -68,6 +68,7 @@
         </div>
         <a href="tel: " class="phone-link native-link">+0 (000) 000-00-00</a> <br>
         <a href="#calculator" class="count-link native-link">Расчитать стоимость</a>
+        <div class="menu"></div>
     </div>
 </div>
 <div class="main-arrows">
@@ -144,7 +145,7 @@
 <main class="main">
     <div class="filter"></div>
     <div class="main-content">
-        <div class="container-md">
+        <div class="container">
             <div class="main-content-in">
                 <div class="desktop">
                     <p class="imp">Установка натяжных потолков</p>
@@ -177,143 +178,132 @@
 </main>
 
 <section class="types">
-    <div class="container-md">
+    <div class="container">
         <div class="section-header-1">Виды потолков</div>
         <p class="section-subtext">Мы монтируем и самые простые конструкции в один или два уровня, и реализуем последние
             технические новинки, такие как Звездное небо, резной потолок Apply, удивительный Double Vision, парящий и
             т.д.</p>
         <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInLeft" id="type-1">
-                    <div class="types-block-name types-block-name-right">
-                        <div class="types-block-name-in">
-                            <span>Обычный</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="1">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInRight" id="type-2">
-                    <div class="types-block-name types-block-name-left">
-                        <div class="types-block-name-in">
-                            <span>Тканевый</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="2">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
+            <div class="types-block wow animate__animated animate__fadeInLeft" id="type-1">
+                <div class="types-block-name types-block-name-right">
+                    <div class="types-block-name-in">
+                        <span>Обычный</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="1">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInLeft" id="type-3">
-                    <div class="types-block-name types-block-name-right">
-                        <div class="types-block-name-in">
-                            <span>Apply</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="3">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInRight" id="type-4">
-                    <div class="types-block-name types-block-name-left">
-                        <div class="types-block-name-in">
-                            <span>Парящий</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="4">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
+            <div class="types-block wow animate__animated animate__fadeInRight" id="type-2">
+                <div class="types-block-name types-block-name-left">
+                    <div class="types-block-name-in">
+                        <span>Тканевый</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="2">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInLeft" id="type-5">
-                    <div class="types-block-name types-block-name-right">
-                        <div class="types-block-name-in">
-                            <span>Фотопечать</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="5">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInRight" id="type-6">
-                    <div class="types-block-name types-block-name-left">
-                        <div class="types-block-name-in">
-                            <span>Световые линии</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="6">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
+            <div class="types-block wow animate__animated animate__fadeInLeft" id="type-3">
+                <div class="types-block-name types-block-name-right">
+                    <div class="types-block-name-in">
+                        <span>Apply</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="3">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInLeft" id="type-7">
-                    <div class="types-block-name types-block-name-right">
-                        <div class="types-block-name-in">
-                            <span>Уровневый</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="7">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
+            <div class="types-block wow animate__animated animate__fadeInRight" id="type-4">
+                <div class="types-block-name types-block-name-left">
+                    <div class="types-block-name-in">
+                        <span>Парящий</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="4">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="types-block wow animate__animated animate__fadeInRight" id="type-8">
-                    <div class="types-block-name types-block-name-left">
-                        <div class="types-block-name-in">
-                            <span>Звездное небо</span>
-                            <div class="btns">
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="info-btn">Подробнее</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                                <button class="order-btn" data-ceiling-type="8">Заказать</button>
-                                <img src="img/types/line.png" alt="" class="line">
-                            </div>
+
+            <div class="types-block wow animate__animated animate__fadeInLeft" id="type-5">
+                <div class="types-block-name types-block-name-right">
+                    <div class="types-block-name-in">
+                        <span>Фотопечать</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="5">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="types-block wow animate__animated animate__fadeInRight" id="type-6">
+                <div class="types-block-name types-block-name-left">
+                    <div class="types-block-name-in">
+                        <span>Световые линии</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="6">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="types-block wow animate__animated animate__fadeInLeft" id="type-7">
+                <div class="types-block-name types-block-name-right">
+                    <div class="types-block-name-in">
+                        <span>Уровневый</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="7">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="types-block wow animate__animated animate__fadeInRight" id="type-8">
+                <div class="types-block-name types-block-name-left">
+                    <div class="types-block-name-in">
+                        <span>Звездное небо</span>
+                        <div class="btns">
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="info-btn">Подробнее</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                            <button class="order-btn" data-ceiling-type="8">Заказать</button>
+                            <img src="img/types/line.png" alt="" class="line">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -324,7 +314,7 @@
     <div class="section-header-2">Калькулятор <br>стоимости</div>
     <div class="steper">
         <div class="step">
-            <div class="container-md">
+            <div class="container">
                 <div class="calculator-wrap">
                     <div class="calculator-wrap-header">
                         Введите площадь помещения
@@ -340,7 +330,7 @@
             </div>
         </div>
         <div class="step">
-            <div class="container-md">
+            <div class="container">
                 <div class="calculator-wrap">
                     <div class="calculator-wrap-header">
                         Выберите вид потолка
@@ -390,7 +380,7 @@
             </div>
         </div>
         <div class="step">
-            <div class="container-md">
+            <div class="container">
                 <div class="calculator-wrap">
                     <div class="calculator-wrap-header">
                         Выберите дополнительные элементы
@@ -423,7 +413,7 @@
             </div>
         </div>
         <div class="step">
-            <div class="container-md">
+            <div class="container">
                 <div class="calculator-wrap">
                     <div class="calculator-wrap-header">
                         Выберите дополнительные элементы
@@ -452,7 +442,7 @@
                                     </div>
                                 </div>
                                 <div class="calc-row">
-                                    <input placeholder="+7-(___)-___-__-__" id="calc-phone" type="tel">
+                                    <input placeholder="+38-(___)-___-__-__" id="calc-phone" type="tel">
                                 </div>
                                 <div class="calc-row">
                                     <button data-num="4" class="btn-next" id="calc-check">ПОЛУЧИТЬ РАССЧЕТ</button>
@@ -465,7 +455,7 @@
             </div>
         </div>
         <div class="step">
-            <div class="container-md">
+            <div class="container">
                 <div class="calculator-wrap">
                     <div class="calculator-wrap-header">
                         Спасибо за опрос!
@@ -493,7 +483,7 @@
     </div>
     <div class="sales-slider">
         <div class="sales-slider-slide sale-1" id="sale-1">
-            <div class="container-md">
+            <div class="container">
                 <div class="sale-block">
                     <img src="img/sales/element.png" alt="" class="el">
                     <div class="sale-header">СКИДКА</div>
@@ -505,7 +495,7 @@
         </div>
 
         <div class="sales-slider-slide sale-2" id="sale-2">
-            <div class="container-md">
+            <div class="container">
                 <div class="sale-block">
                     <img src="img/sales/element.png" alt="" class="el">
                     <div class="sale-header">БЕСПЛАТНО</div>
@@ -517,7 +507,7 @@
         </div>
 
         <div class="sales-slider-slide sale-3" id="sale-3">
-            <div class="container-md">
+            <div class="container">
                 <div class="sale-block">
                     <img src="img/sales/element.png" alt="" class="el">
                     <div class="sale-header">СКИДКА</div>
@@ -527,7 +517,7 @@
         </div>
 
         <div class="sales-slider-slide sale-4" id="sale-4">
-            <div class="container-md">
+            <div class="container">
                 <div class="sale-block">
                     <img src="img/sales/element.png" alt="" class="el">
                     <div class="sale-header">Подарок</div>
@@ -544,7 +534,7 @@
     <div class="section-header-2">
         Как проходит работа
     </div>
-    <div class="container-md">
+    <div class="container">
         <div class="work-in">
             <div class="work-in-row">
                 <div class="work-block work-1 wow animate__animated animate__fadeInLeft">
@@ -620,7 +610,7 @@
     <div class="section-header-1">
         О нас
     </div>
-    <div class="container-md">
+    <div class="container">
         <div class="about-in">
             <div class="about-info">
                 <div class="about-info-in">
@@ -638,6 +628,9 @@
                 </div>
             </div>
             <div class="reviews">
+                <div id="reviews-dots">
+
+                </div>
                 <img class="man" src="img/about/man.png" alt="">
                 <div class="reviews-header">
                     Отзывы
@@ -646,9 +639,9 @@
                     <div class="reviews-slider">
                         <div class="review">
                             <div class="user">
-                                <div class="media">
-                                    <img class="align-self-center mr-3" src="img/about/user.png" alt="user image">
-                                    <div class="media-body align-self-center">
+                                <div class="media media--align-center">
+                                    <img src="img/about/user.png" alt="user image">
+                                    <div class="media__content">
                                         <h1>Владислав</h1>
                                     </div>
                                 </div>
@@ -660,9 +653,9 @@
                         </div>
                         <div class="review">
                             <div class="user">
-                                <div class="media">
-                                    <img class="align-self-center mr-3" src="img/about/user.png" alt="user image">
-                                    <div class="media-body align-self-center">
+                                <div class="media media--align-center">
+                                    <img src="img/about/user.png" alt="user image">
+                                    <div class="media__content">
                                         <h1>Владислав</h1>
                                     </div>
                                 </div>
@@ -674,37 +667,9 @@
                         </div>
                         <div class="review">
                             <div class="user">
-                                <div class="media">
-                                    <img class="align-self-center mr-3" src="img/about/user.png" alt="user image">
-                                    <div class="media-body align-self-center">
-                                        <h1>Владислав</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>
-                                конструкции в один или два уровня, и реализуем последние технические новинки, такие как
-                                Звездное небо, резной потолок Apply, удивительный Double Vision, а также парящий
-                            </p>
-                        </div>
-                        <div class="review">
-                            <div class="user">
-                                <div class="media">
-                                    <img class="align-self-center mr-3" src="img/about/user.png" alt="user image">
-                                    <div class="media-body align-self-center">
-                                        <h1>Владислав</h1>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>
-                                конструкции в один или два уровня, и реализуем последние технические новинки, такие как
-                                Звездное небо, резной потолок Apply, удивительный Double Vision, а также парящий
-                            </p>
-                        </div>
-                        <div class="review">
-                            <div class="user">
-                                <div class="media">
-                                    <img class="align-self-center mr-3" src="img/about/user.png" alt="user image">
-                                    <div class="media-body align-self-center">
+                                <div class="media media--align-center">
+                                    <img src="img/about/user.png" alt="user image">
+                                    <div class="media__content">
                                         <h1>Владислав</h1>
                                     </div>
                                 </div>
@@ -724,7 +689,7 @@
 <section class="request">
     <img src="img/request/notebook.png" alt="" class="notebook">
     <img src="img/request/man.png" alt="" class="man-2">
-    <div class="container-md">
+    <div class="container">
         <div class="section-header-2">
             Заявка
         </div>
@@ -746,8 +711,8 @@
 <section class="footer-mobile" id="contacts-mob">
     <div class="footer-mobile-content">
         <div class="menu-block">
-            <div class="media">
-                <img class="align-self-center logo" src="img/main/logo-lg.png" alt="">
+            <div class="media-1">
+                <img class="logo" src="img/main/logo-lg.png" alt="">
                 <div class="media-body">
                     <div class="phones">
                         <a href="">+0 (000) 000-00-00</a>
@@ -844,24 +809,12 @@
 
 <!--Scripts-->
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 <script src="https://unpkg.com/imask"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="js/wow.min.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/calculator.js"></script>
-<script>
-    new WOW({
-        mobile: false,
-    }).init();
-</script>
 <script>
     $(".sales-slider").slick({
         arrows: false,
@@ -877,8 +830,9 @@
         autoplay: true,
         autoplaySpeed: 3000,
         infinite: true,
-        dots: true,
         dotsClass: "slick-dots-1",
+        dots: true,
+        appendDots: "#reviews-dots",
     });
 </script>
 </body>

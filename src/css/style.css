@@ -22,16 +22,39 @@
   font-style: normal;
   font-display: swap;
 }
-@media only screen and (max-width: 768px) {
-  .animate__animated {
-    /*CSS transitions*/
-    transition-property: none !important;
-    /*CSS transforms*/
-    transform: none !important;
-    /*CSS animations*/
-    animation: none !important;
-  }
+.media {
+  display: flex;
+  margin-left: -1rem;
 }
+
+.media-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.media--reversed {
+  flex-direction: row-reverse;
+}
+
+.media--align-center {
+  align-items: center;
+}
+
+.media--align-end {
+  align-items: end;
+}
+
+.media img {
+  flex-shrink: 0;
+}
+
+.media__content {
+  padding-left: 1rem;
+  flex: 1;
+}
+
 body, html {
   font-family: "Muller", sans-serif;
   font-size: 10px;
@@ -64,15 +87,24 @@ a:hover {
   .section-header-1 {
     color: #FFCC16;
     font-size: 3.6rem;
+    letter-spacing: 0.8em;
+  }
+}
+@media (max-width: 768px) {
+  .section-header-1 {
+    letter-spacing: 0.7em;
+    font-size: 3.2rem;
   }
 }
 @media (max-width: 576px) {
   .section-header-1 {
+    letter-spacing: 0.6em;
     font-size: 2.8rem;
   }
 }
 @media (max-width: 425px) {
   .section-header-1 {
+    letter-spacing: 0.5em;
     font-size: 2.5rem;
   }
 }
@@ -93,20 +125,24 @@ a:hover {
   .section-header-2 {
     font-weight: 900;
     font-size: 3.6rem;
+    letter-spacing: 0.8em;
   }
 }
 @media (max-width: 768px) {
   .section-header-2 {
+    letter-spacing: 0.7em;
     font-size: 3.2rem;
   }
 }
 @media (max-width: 576px) {
   .section-header-2 {
+    letter-spacing: 0.6em;
     font-size: 2.4rem;
   }
 }
 @media (max-width: 425px) {
   .section-header-2 {
+    letter-spacing: 0.5em;
     font-size: 1.8rem;
   }
 }
@@ -410,6 +446,9 @@ a:hover {
     font-size: 1.8rem;
   }
 }
+.main-header-mobile-content .menu {
+  height: 4rem;
+}
 .main-header-mobile-content .phone-link {
   margin: 2rem 0;
   font-size: 3.2rem;
@@ -568,10 +607,15 @@ a:hover {
 .main-content p {
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.8rem;
   letter-spacing: 0.05em;
   color: #FFFFFF;
   margin-bottom: 4rem;
+}
+@media (max-width: 768px) {
+  .main-content p {
+    font-size: 1.4rem;
+  }
 }
 .main-content p b {
   font-weight: bolder;
@@ -662,11 +706,15 @@ a:hover {
     padding-top: 7rem;
   }
 }
+.types .row {
+  text-align: center;
+}
 .types .types-block {
   position: relative;
+  display: inline-block;
   overflow: hidden;
-  margin: 0.5rem 0;
-  width: 100%;
+  margin: 0.5rem 0.5%;
+  width: 48%;
   height: 18rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -675,7 +723,9 @@ a:hover {
 }
 @media (max-width: 992px) {
   .types .types-block {
+    width: 100%;
     height: 25rem;
+    margin: 0.5rem 0;
   }
   .types .types-block .order-btn {
     height: 3rem;
@@ -815,6 +865,7 @@ a:hover {
   letter-spacing: 0.2em;
   color: #000000;
   background: transparent;
+  transition: 0.3s;
 }
 @media (max-width: 992px) {
   .types .types-block-name .order-btn {
@@ -838,13 +889,17 @@ a:hover {
   }
 }
 .types .types-block-name .order-btn:hover {
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 52.08%, rgba(0, 0, 0, 0) 100%);
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
-  transition: background 3s;
+  border-radius: 1rem;
+  transition: background 0.3s;
 }
-.types .types-block-name .order-btn:focus {
-  background: #000000;
-  color: #fff;
+@media (min-width: 992px) {
+  .types .types-block-name .order-btn:focus {
+    background: #000000;
+    color: #fff;
+    border-radius: 1rem;
+  }
 }
 .types .types-block-name .info-btn {
   display: none;
@@ -860,6 +915,7 @@ a:hover {
   letter-spacing: 0.2em;
   color: #000000;
   background: transparent;
+  transition: 0.3s;
 }
 @media (max-width: 992px) {
   .types .types-block-name .info-btn {
@@ -883,10 +939,14 @@ a:hover {
   }
 }
 .types .types-block-name .info-btn:hover {
-  background: linear-gradient(270deg, rgba(255, 204, 22, 0) 0%, #FFCC16 52.08%, rgba(255, 204, 22, 0) 100%);
+  background: rgba(255, 204, 22, 0.5);
+  border-radius: 1rem;
 }
-.types .types-block-name .info-btn:focus {
-  background: #FFCC16;
+@media (min-width: 992px) {
+  .types .types-block-name .info-btn:focus {
+    background: #FFCC16;
+    border-radius: 1rem;
+  }
 }
 .types .types-block-name span {
   display: block;
@@ -1188,6 +1248,11 @@ a:hover {
     margin: 1rem auto;
   }
 }
+@media (max-width: 425px) {
+  .calculator-wrap-body .calc-addition-block-2 img {
+    height: 4rem;
+  }
+}
 .calculator-wrap-body .calc-addition-block-2 span {
   font-size: 2rem;
   text-align: center;
@@ -1212,7 +1277,7 @@ a:hover {
 }
 @media (max-width: 425px) {
   .calculator-wrap-body .calc-addition-block-2 span {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
 }
 .calculator-wrap-body #calc-check {
@@ -1766,6 +1831,13 @@ a:hover {
     width: 100%;
     position: static;
   }
+}
+.about .reviews #reviews-dots {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .about .reviews-slider .user {
   margin: 1rem 0;

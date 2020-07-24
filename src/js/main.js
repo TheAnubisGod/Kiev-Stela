@@ -18,7 +18,6 @@ $(document).ready(function () {
     function activateMenu() {
         document.querySelector(".main-header-mobile-content").classList.add("h100vh")
         $(".main-header-mobile-content").slideDown(300, "linear")
-        document.querySelector(".main-header-mobile-content").classList.remove("h100vh")
         document.querySelector("body").style.overflow = "hidden"
         document.querySelector(".top-horizon").style.display = "block"
         document.querySelector(".main-arrows").style.top = ((1 - 40 / document.documentElement.clientHeight) * 100).toString() + "%"
@@ -28,7 +27,6 @@ $(document).ready(function () {
     }
 
     function disableMenu() {
-        document.querySelector(".main-header-mobile-content").classList.add("h100vh")
         $(".main-header-mobile-content").slideUp(300, "linear")
         document.querySelector(".main-header-mobile-content").classList.remove("h100vh")
         document.querySelector("body").style.overflow = "auto"
