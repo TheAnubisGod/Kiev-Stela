@@ -1823,7 +1823,7 @@ a:hover {
 }
 @media (max-width: 1200px) {
   .about .reviews {
-    width: 40%;
+    width: 45%;
   }
 }
 @media (max-width: 992px) {
@@ -1832,12 +1832,29 @@ a:hover {
     position: static;
   }
 }
-.about .reviews #reviews-dots {
+.about .reviews .arrow-next {
+  border: none;
+  background: url("../img/about/arr-r.png");
+  background-size: cover;
   z-index: 1;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  right: -1.9rem;
+  transform: translateY(-50%);
+  height: 6.4rem;
+  width: 1.95rem;
+}
+.about .reviews .arrow-prev {
+  border: none;
+  background: url("../img/about/arr-l.png");
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: -1.9rem;
+  transform: translateY(-50%);
+  height: 6.4rem;
+  width: 1.95rem;
 }
 .about .reviews-slider .user {
   margin: 1rem 0;
@@ -1883,7 +1900,7 @@ a:hover {
   }
 }
 .about .reviews-body {
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 .about .reviews-body p {
   font-size: 1.8rem;
@@ -1929,7 +1946,7 @@ a:hover {
   }
 }
 .about .about-info-in {
-  width: 80%;
+  width: 75%;
   text-align: center;
 }
 @media (max-width: 992px) {

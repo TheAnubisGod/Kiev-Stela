@@ -700,8 +700,8 @@
                 <br>клиентов после начала работы с нами.
             </div>
             <form action="">
-                <input placeholder="Ваше имя" type="text">
-                <input placeholder="Ваш телефон" type="tel">
+                <input placeholder="Ваше имя" type="text" id="main-form-name">
+                <input placeholder="Ваш телефон" type="tel" id="main-form-phone">
                 <button type="submit">Оставить заявку</button>
             </form>
         </div>
@@ -826,13 +826,15 @@
     });
 
     $(".reviews-slider").slick({
-        arrows: false,
+        arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
         infinite: true,
-        dotsClass: "slick-dots-1",
-        dots: true,
-        appendDots: "#reviews-dots",
+        prevArrow: "<button class='arrow-prev'></button>",
+        nextArrow: "<button class='arrow-next'></button>",
+        // dotsClass: "slick-dots-1",
+        // dots: true,
+        // appendDots: "#reviews-dots",
     });
 </script>
 </body>

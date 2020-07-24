@@ -82,6 +82,13 @@ $(document).ready(function () {
             window.location.hash = target;
         });
     });
+
+    // Form
+    let element = document.getElementById('main-form-phone');
+    let maskOptions = {
+        mask: '+{38}-(000)-000-00-00'
+    }
+    let mask = IMask(element, maskOptions);
 });
 
 
