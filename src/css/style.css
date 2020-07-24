@@ -385,6 +385,21 @@ a:hover {
   text-align: center;
   padding-top: 4rem;
 }
+.main-header-mobile-content .count-link {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  background: #FF2C2C;
+  padding: 4px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.05em;
+  font-size: 2.4rem;
+}
+@media (max-width: 425px) {
+  .main-header-mobile-content .count-link {
+    font-size: 1.8rem;
+  }
+}
 .main-header-mobile-content .phone-link {
   margin: 2rem 0;
   font-size: 3.2rem;
@@ -1887,7 +1902,7 @@ a:hover {
 }
 @media (max-width: 992px) {
   .request {
-    padding-bottom: 30rem;
+    padding: 2rem 0 30rem 0;
   }
 }
 .request .notebook {
@@ -2105,9 +2120,9 @@ a:hover {
 }
 .footer-mobile-content {
   background: #000;
-  padding-bottom: 4rem;
   text-align: center;
   padding-top: 4rem;
+  padding-bottom: 6rem;
 }
 .footer-mobile-content .phone-link {
   margin: 2rem 0;

@@ -23,3 +23,11 @@ for (let i = 0; i < 8; i++) {
 document.querySelector(".close-btn").addEventListener("click", function (e) {
     hide_modal()
 })
+
+$(document).mouseup(function (e) {
+    let modal = $(".modal-window");
+    if (!modal.is(e.target)
+        && modal.has(e.target).length === 0) {
+        hide_modal()
+    }
+});
