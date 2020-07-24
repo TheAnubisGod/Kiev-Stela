@@ -1382,20 +1382,8 @@ a:hover {
   background: url("../img/types/star.png") center center;
   background-size: cover;
 }
-.calculator-wrap-body #glance {
-  background: url("../img/types/glance.png") center center;
-  background-size: cover;
-}
-.calculator-wrap-body #mat {
-  background: url("../img/types/mat.png") center center;
-  background-size: cover;
-}
 .calculator-wrap-body #calc-type-4 {
   background: url("../img/types/cloth.png") center center;
-  background-size: cover;
-}
-.calculator-wrap-body #satin {
-  background: url("../img/types/satin.png") center center;
   background-size: cover;
 }
 .calculator-wrap-body #calc-add-1 {
