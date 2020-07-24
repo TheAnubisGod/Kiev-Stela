@@ -22,6 +22,16 @@
   font-style: normal;
   font-display: swap;
 }
+@media only screen and (max-width: 768px) {
+  .animate__animated {
+    /*CSS transitions*/
+    transition-property: none !important;
+    /*CSS transforms*/
+    transform: none !important;
+    /*CSS animations*/
+    animation: none !important;
+  }
+}
 body, html {
   font-family: "Muller", sans-serif;
   font-size: 10px;
@@ -830,6 +840,7 @@ a:hover {
 .types .types-block-name .order-btn:hover {
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 52.08%, rgba(0, 0, 0, 0) 100%);
   color: #fff;
+  transition: background 3s;
 }
 .types .types-block-name .order-btn:focus {
   background: #000000;
