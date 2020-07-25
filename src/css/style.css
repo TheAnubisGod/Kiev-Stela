@@ -1590,7 +1590,7 @@ img {
 .work {
   position: relative;
   text-align: center;
-  padding: 4rem 0;
+  padding: 4rem 0 6rem 0;
 }
 @media (max-width: 992px) {
   .work {
@@ -1647,6 +1647,8 @@ img {
   }
 }
 .work-in {
+  position: relative;
+  margin: 10rem 0;
   background: url("../img/work/line.png") center center no-repeat;
   background-size: 80%;
   min-height: 50rem;
@@ -1660,27 +1662,57 @@ img {
     display: block;
   }
 }
+.work-in-row-1 {
+  position: absolute;
+  top: 15%;
+  transform: translateY(-50%);
+}
+@media (max-width: 1200px) {
+  .work-in-row-1 {
+    top: 20%;
+    transform: translateY(-50%);
+  }
+}
+@media (max-width: 992px) {
+  .work-in-row-1 {
+    position: static;
+    transform: none;
+  }
+}
+.work-in-row-2 {
+  position: absolute;
+  bottom: 15%;
+  transform: translateY(50%);
+}
+@media (max-width: 1200px) {
+  .work-in-row-2 {
+    bottom: 20%;
+    transform: translateY(50%);
+  }
+}
+@media (max-width: 992px) {
+  .work-in-row-2 {
+    position: static;
+    transform: none;
+  }
+}
 @media (max-width: 992px) {
   .work-in {
     background: #fff;
+    margin: 5rem 0;
   }
 }
 .work-block {
   position: relative;
-  margin: 5rem 0;
   display: inline-block;
   padding: 1rem;
   background: #fff;
   width: 28%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 1200px) {
-  .work-block {
-    margin: 2rem 0;
-  }
-}
 @media (max-width: 992px) {
   .work-block {
+    min-height: auto;
     width: 100%;
     margin: 0 0 1rem 0;
   }
