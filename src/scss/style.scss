@@ -87,8 +87,16 @@ body, html {
   font-size: 10px;
 }
 
+img {
+  user-select: none;
+}
+
 input:focus, a:focus, button:focus {
   outline: none;
+}
+
+a, button {
+  user-select: none;
 }
 
 a {
@@ -110,6 +118,7 @@ a {
   text-transform: uppercase;
   color: #FFFFFF;
   text-shadow: -3px 2px 1px black;
+  user-select: none;
   @media (max-width: 992px) {
     color: $imp-text-color;
     font-size: 3.6rem;
@@ -140,6 +149,7 @@ a {
   text-transform: uppercase;
   color: $imp-text-color;
   text-shadow: -3px 2px 1px black;
+  user-select: none;
   @media (max-width: 992px) {
     font-weight: 900;
     font-size: 3.6rem;
@@ -198,6 +208,10 @@ a {
   @media (max-width: 1200px) {
     font-size: 14px;
   }
+}
+
+img {
+  pointer-events: none;
 }
 
 // Slider
@@ -265,6 +279,7 @@ a {
 
 }
 
+// Additional classes
 .rotate180 {
   transition: transform 1s;
   transform: translateY(-50%) rotate(180deg) !important;
@@ -350,6 +365,98 @@ a {
   }
 }
 
+.main {
+  position: relative;
+  z-index: 1;
+  background: url("../img/main/bg.png") center center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+
+  .filter {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  }
+
+  .count-link {
+    color: #fff;
+    font-weight: bold;
+    background: #FF2C2C;
+    padding: 4px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.05em;
+    font-size: 14px;
+  }
+
+  &-content {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+
+    .imp {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $imp-text-color;
+      margin: 0;
+    }
+
+    span {
+      margin: 0;
+      padding: 0;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 96px;
+      text-align: left;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $imp-text-color;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      margin-bottom: 4rem;
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
+
+      b {
+        font-weight: bolder;
+      }
+    }
+
+    .count-link {
+      padding: 1rem 3rem;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.42);
+    }
+  }
+
+  &-header-mobile {
+
+  }
+}
+
+// Menu
 .main-header-desktop {
   font-size: 1.4rem;
   position: fixed;
@@ -461,7 +568,7 @@ a {
     }
 
     .menu {
-      height: $menu-height;
+      height: 2 * $menu-height;
     }
 
     .phone-link {
@@ -561,98 +668,6 @@ a {
   }
 }
 
-.main {
-  position: relative;
-  z-index: 1;
-  background: url("../img/main/bg.png") center center no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
-
-  .filter {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-  }
-
-  .count-link {
-    color: #fff;
-    font-weight: bold;
-    background: #FF2C2C;
-    padding: 4px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.05em;
-    font-size: 14px;
-  }
-
-  &-content {
-    position: absolute;
-    bottom: 4rem;
-    left: 0;
-    width: 100%;
-
-    .imp {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: $imp-text-color;
-      margin: 0;
-    }
-
-    span {
-      margin: 0;
-      padding: 0;
-      font-style: normal;
-      font-weight: 900;
-      font-size: 96px;
-      text-align: left;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: $imp-text-color;
-    }
-
-    p {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 1.8rem;
-      letter-spacing: 0.05em;
-      color: #FFFFFF;
-      margin-bottom: 4rem;
-      @media (max-width: 768px) {
-        font-size: 1.4rem;
-      }
-
-      b {
-        font-weight: bolder;
-      }
-    }
-
-    .count-link {
-      padding: 1rem 3rem;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 24px;
-      text-align: center;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.42);
-    }
-  }
-
-  &-header-mobile {
-
-  }
-}
-
-// Menu
 .block {
   min-width: 130px;
   padding: 1rem;
@@ -1947,11 +1962,10 @@ $name-width: 40%;
     }
 
     .man {
-      width: 100%;
+      width: 41.85rem;
       position: absolute;
-      top: -98%;
-      left: 0;
-      z-index: -1;
+      top: -38.25rem;
+      left: -4rem;
       @media (max-width: 992px) {
         display: none;
       }
@@ -2000,7 +2014,6 @@ $name-width: 40%;
 
   .about-info {
     position: relative;
-    z-index: -2;
     padding: 2rem;
     width: 80%;
     display: block;
@@ -2016,6 +2029,7 @@ $name-width: 40%;
     }
 
     &-in {
+      position: relative;
       width: 75%;
       text-align: center;
 
