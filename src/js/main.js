@@ -20,18 +20,19 @@ $(document).ready(function () {
         $(".main-header-mobile-content").slideDown(300, "linear")
         document.querySelector("body").style.overflow = "hidden"
         document.querySelector(".top-horizon").style.display = "block"
-        document.querySelector(".main-arrows").style.top = ((1 - 40 / document.documentElement.clientHeight) * 100).toString() + "%"
         menu_active = true
         $(".main-arrow-left").toggleClass("rotate180")
         $(".main-arrow-right").toggleClass("rotate-180")
+        setTimeout(function () {
+            document.querySelector(".main-arrows").style.transition = "none"
+        }, 300)
     }
 
     function disableMenu() {
+        document.querySelector(".main-arrows").style.transition = "300ms linear"
         $(".main-header-mobile-content").slideUp(300, "linear")
-        document.querySelector(".main-header-mobile-content").classList.remove("h100vh")
         document.querySelector("body").style.overflow = "auto"
         document.querySelector(".top-horizon").style.display = "none"
-        document.querySelector(".main-arrows").style.top = "0"
         menu_active = false
         $(".main-arrow-left").toggleClass("rotate180")
         $(".main-arrow-right").toggleClass("rotate-180")
@@ -46,7 +47,7 @@ $(document).ready(function () {
     })
 
     let // header_desktop = $('.main-header-desktop'),
-        header_mobile = $('.main-arrows'),
+        header_mobile = $('.main-header-mobile'),
         logo = $(".logo-mobile"),
         scrollPrev = 0;
 

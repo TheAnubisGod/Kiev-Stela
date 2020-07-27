@@ -191,7 +191,7 @@ a:hover {
 }
 
 .h100vh {
-  height: 100vh;
+  height: calc(100vh - 4rem);
 }
 
 .hidden {
@@ -518,16 +518,22 @@ img {
   background: #000;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
+  transition: 300ms linear;
 }
 @media (max-width: 992px) {
   .main-header-mobile {
     display: block;
   }
 }
+.main-header-mobile.out {
+  transform: translateY(-100%) !important;
+}
 .main-header-mobile-content {
+  overflow: scroll;
   padding-bottom: 4rem;
   text-align: center;
   padding-top: 4rem;
+  background: #000;
 }
 .main-header-mobile-content .count-link {
   display: inline-block;
@@ -590,11 +596,10 @@ img {
 }
 
 .main-arrows {
+  position: relative;
   display: none;
   transform: none;
   height: 4rem;
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 4;
   background: #000;
@@ -606,9 +611,6 @@ img {
   .main-arrows {
     display: block;
   }
-}
-.main-arrows.out {
-  transform: translateY(-100%) !important;
 }
 
 .main-arrow-left {
