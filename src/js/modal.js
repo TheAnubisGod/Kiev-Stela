@@ -3,14 +3,14 @@ function show_modal(type) {
 
     if (type > 0 && type <= 8) {
         document.getElementById("ceiling-type-name").innerText = types[type - 1]
-        document.querySelector(".modal-window-bg").classList.remove("hidden")
+        $(".modal-window-bg").fadeIn()
         document.querySelector("body").style.overflow = "hidden"
     }
 }
 
 function hide_modal() {
     document.getElementById("ceiling-type-name").innerText = ""
-    document.querySelector(".modal-window-bg").classList.add("hidden")
+    $(".modal-window-bg").fadeOut()
     document.querySelector("body").style.overflow = "visible"
 }
 

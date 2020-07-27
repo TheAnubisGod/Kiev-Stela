@@ -172,21 +172,15 @@ a:hover {
 }
 @media (max-width: 992px) {
   .section-subtext {
-    font-size: 3.6rem;
+    font-size: 1.8rem;
     letter-spacing: 0.05em;
     font-weight: 300;
-    margin: 5rem 0;
+    margin: 3rem 0;
   }
 }
 @media (max-width: 576px) {
   .section-subtext {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 425px) {
-  .section-subtext {
-    font-size: 2.5rem;
-    margin: 3rem 0;
+    font-size: 1.6rem;
   }
 }
 
@@ -287,6 +281,11 @@ img {
   }
 }
 
+.count-link:hover {
+  background: #fff !important;
+  color: #FF2C2C !important;
+}
+
 .main-content-block {
   padding-bottom: 4rem;
   text-align: center;
@@ -299,12 +298,12 @@ img {
 }
 @media (max-width: 768px) {
   .main-content-block p {
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1rem 1rem 2rem 1rem;
   }
 }
 @media (max-width: 425px) {
   .main-content-block p {
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
   }
 }
 .main-content-header {
@@ -414,7 +413,7 @@ img {
 }
 @media (max-width: 768px) {
   .main-content p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 .main-content p b {
@@ -432,6 +431,7 @@ img {
   color: #FFFFFF;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.42);
 }
+
 .main-header-desktop {
   font-size: 1.4rem;
   position: fixed;
@@ -912,7 +912,6 @@ img {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border-radius: 1rem;
-  transition: background 0.3s;
 }
 @media (min-width: 992px) {
   .types .types-block-name .order-btn:focus {
@@ -1137,6 +1136,9 @@ img {
   text-transform: uppercase;
   color: #000000;
   padding: 0.5rem 4rem;
+}
+.calculator-wrap-body .btn-next:hover {
+  background: #fff;
 }
 .calculator-wrap-body-content {
   width: 100%;
@@ -1480,7 +1482,7 @@ img {
   top: 0;
   width: 100%;
   left: 0;
-  transition: left 1s linear;
+  transition: left 0.3s linear;
 }
 
 .sales {
@@ -2040,6 +2042,10 @@ img {
     font-size: 1.6rem;
   }
 }
+.about .about-info-in .more:hover {
+  background: #fff;
+  color: #000;
+}
 
 .request {
   padding: 8rem 0;
@@ -2163,6 +2169,10 @@ img {
   .request-card form button {
     font-size: 1.4rem;
   }
+}
+.request-card form button:hover {
+  background: #fff;
+  color: #000;
 }
 
 .footer-desktop {
@@ -2333,6 +2343,7 @@ img {
   }
 }
 .modal-window-bg {
+  display: none;
   z-index: 6;
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
@@ -2482,4 +2493,8 @@ img {
   .modal-window-content form button {
     font-size: 1.4rem;
   }
+}
+.modal-window-content form button:hover {
+  background: #fff;
+  color: #000;
 }

@@ -47,13 +47,13 @@ function validate() {
     return validate_square() && validate_type() && validate_extra_elements() && validate_contact_type() && validate_phone()
 }
 
-for (let i = 0; i < steps.length; i++) {
-    let step = steps[i]
-    step.style.left = (100).toString() + "%"
-    if (i === 0) {
-        step.style.left = (0).toString() + "%"
-    }
-}
+// for (let i = 0; i < steps.length; i++) {
+//     let step = steps[i]
+//     step.style.left = (100).toString() + "%"
+//     if (i === 0) {
+//         step.style.left = (0).toString() + "%"
+//     }
+// }
 
 let next_buttons = document.querySelectorAll(".btn-next")
 let prev_buttons = document.querySelectorAll(".btn-prev")
@@ -151,6 +151,7 @@ document.getElementById("calc-check").addEventListener("click", function () {
         console.log(data)
     }
 })
+
 
 // for (let i = 0; i < prev_buttons.length; i++) {
 //     prev_buttons[i].addEventListener("click", function (event) {
