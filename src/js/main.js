@@ -15,8 +15,12 @@ $(document).ready(function () {
 
     $(".main-header-mobile-content").slideUp("fast")
 
+    function calc_height() {
+        document.querySelector(".main-header-mobile-content").style.height = (window.innerHeight - 40).toString() + "px"
+    }
+
     function activateMenu() {
-        document.querySelector(".main-header-mobile-content").classList.add("h100vh")
+        calc_height()
         $(".main-header-mobile-content").slideDown(300, "linear")
         document.querySelector("body").style.overflow = "hidden"
         document.querySelector(".top-horizon").style.display = "block"
@@ -37,6 +41,10 @@ $(document).ready(function () {
         $(".main-arrow-left").toggleClass("rotate180")
         $(".main-arrow-right").toggleClass("rotate-180")
     }
+
+    window.addEventListener("resize", function () {
+        calc_height()
+    })
 
     $(".main-arrows").on("click", function () {
         if (document.querySelector(".main-header-mobile-content").style.display === "none") {
