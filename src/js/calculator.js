@@ -9,12 +9,6 @@ let data = {
     phone: ""
 }
 
-let element = document.getElementById('calc-phone');
-let maskOptions = {
-    mask: '+{38}-(000)-000-00-00'
-}
-let mask = IMask(element, maskOptions);
-
 function validate_square() {
     return (data.square > 0 && data.square <= 50)
 }
@@ -40,7 +34,7 @@ function validate_contact_type() {
 }
 
 function validate_phone() {
-    return (data.phone.length === 13)
+    return (document.querySelector("#calc-phone").value.length === 18)
 }
 
 function validate() {
@@ -146,11 +140,13 @@ for (let i = 1; i <= 4; i++) {
 }
 
 document.getElementById("calc-check").addEventListener("click", function () {
-    data.phone = "+" + mask.unmaskedValue
+    data.phone = document.querySelector("#calc-phone").value
     if (validate()) {
         console.log(data)
     }
 })
+
+$("#calc-phone").inputmask({"mask": "+38 (999) 999-9999"});
 
 
 // for (let i = 0; i < prev_buttons.length; i++) {

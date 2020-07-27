@@ -13,7 +13,7 @@ $(document).ready(function () {
         }
     });
 
-    $(".main-header-mobile-content").slideUp("fast")
+
 
     function calc_height() {
         document.querySelector(".main-header-mobile-content").style.height = (window.innerHeight - 40).toString() + "px"
@@ -27,13 +27,9 @@ $(document).ready(function () {
         menu_active = true
         $(".main-arrow-left").toggleClass("rotate180")
         $(".main-arrow-right").toggleClass("rotate-180")
-        setTimeout(function () {
-            document.querySelector(".main-arrows").style.transition = "none"
-        }, 300)
     }
 
     function disableMenu() {
-        document.querySelector(".main-arrows").style.transition = "300ms linear"
         $(".main-header-mobile-content").slideUp(300, "linear")
         document.querySelector("body").style.overflow = "auto"
         document.querySelector(".top-horizon").style.display = "none"
@@ -93,11 +89,7 @@ $(document).ready(function () {
     });
 
     // Form
-    let element = document.getElementById('main-form-phone');
-    let maskOptions = {
-        mask: '+{38}-(000)-000-00-00'
-    }
-    let mask = IMask(element, maskOptions);
+    $("#main-form-phone").inputmask({"mask": "+38 (999) 999-9999"});
 });
 
 
