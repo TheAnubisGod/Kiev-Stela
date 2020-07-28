@@ -7,12 +7,14 @@ $(document).ready(function () {
     let menu_active = false
 
     $(document).mouseup(function (e) {
-        if (!$(".block-wrap").is(e.target)
-            && $(".block-wrap").has(e.target).length === 0) {
-            $(".block-wrap").addClass("block-inactive")
+
+        for (let i = 0; i < $(".block-wrap").length; i++) {
+            if ($(".block-wrap")[i] !== (e.target)
+                && !$(".block-wrap")[i].contains(e.target)) {
+                $(".block-wrap")[i].classList.add("block-inactive")
+            }
         }
     });
-
 
 
     function calc_height() {

@@ -102,6 +102,7 @@ a, button {
 a {
   color: #fff;
   font-size: 1.4rem;
+  transition: .3s;
 
   &:hover {
     color: $imp-text-color;
@@ -300,6 +301,8 @@ img {
 }
 
 .count-link {
+  transition: .3s;
+
   &:hover {
     background: #fff !important;
     color: #FF2C2C !important;
@@ -680,13 +683,6 @@ img {
   justify-content: center;
   align-items: center;
 
-
-  &:hover {
-    span {
-      color: $imp-text-color;
-    }
-  }
-
   &-wrap {
     position: relative;
     height: $menu-height;
@@ -705,6 +701,7 @@ img {
     color: #fff;
     text-decoration: none;
     font-size: 14px;
+    transition: .3s;
 
     &:hover {
       text-decoration: none;
@@ -1189,6 +1186,7 @@ $name-width: 40%;
         text-transform: uppercase;
         color: #000000;
         padding: 0.5rem 4rem;
+        transition: .3s;
 
         &:hover {
           background: #fff;
@@ -2108,6 +2106,8 @@ $name-width: 40%;
         background: #FF2C2C;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         text-transform: uppercase;
+        transition: .3s;
+
         @media (max-width: 425px) {
           font-size: 1.6rem;
         }
@@ -2217,6 +2217,7 @@ $name-width: 40%;
         font-size: 2.4rem;
         padding: 1.5rem 0;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        transition: .3s;
         @media (max-width: 992px) {
           width: 90%;
         }
