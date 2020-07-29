@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
     function calc_height() {
-        document.querySelector(".main-header-mobile-content").style.height = (window.innerHeight - 40).toString() + "px"
+        document.querySelector(".main-header-mobile-content").style.height = (window.innerHeight - 50).toString() + "px"
     }
 
     function activateMenu() {
