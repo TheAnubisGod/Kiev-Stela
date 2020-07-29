@@ -881,6 +881,9 @@ $name-width: 40%;
         height: auto;
         max-height: 0;
         transition: max-height .5s;
+        @media (max-width: 992px) {
+          max-height: none;
+        }
       }
 
       .order-btn {
