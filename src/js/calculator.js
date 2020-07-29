@@ -143,6 +143,11 @@ document.getElementById("calc-check").addEventListener("click", function () {
     data.phone = document.querySelector("#calc-phone").value
     if (validate()) {
         console.log(data)
+        $.ajax({
+            type: "POST",
+            url: "",
+            data: data,
+        });
     }
 })
 

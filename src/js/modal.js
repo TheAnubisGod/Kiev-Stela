@@ -1,5 +1,5 @@
 function show_modal(type) {
-    types = ["обычный", "тканевый", "Apply", "парящий", "фотопечать", "световые линии", "уровневый", "звездное небо"]
+    types = ["Обычный", "Тканевый", "Apply", "Парящий", "Фотопечать", "Световые линии", "Уровневый", "Звездное небо"]
 
     if (type > 0 && type <= 8) {
         document.getElementById("ceiling-type-name").innerText = types[type - 1]
