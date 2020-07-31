@@ -20,6 +20,8 @@ function hide_modal() {
         document.querySelector("body").style.overflow = "visible"
         is_modal_active = false
         current_type = ""
+        document.getElementById("name-modal").value = ""
+        document.getElementById("phone-modal").value = ""
     }
 }
 
@@ -47,8 +49,10 @@ document.getElementById("send-modal").addEventListener("click", function (e) {
                 if (result !== "success") {
                     alert("Ошибка отправки формы!")
                 }
-                document.getElementById("name-modal").value = ""
-                document.getElementById("phone-modal").value = ""
+                hide_modal()
+            },
+            error: function () {
+                alert("Ошибка отправки формы!")
                 hide_modal()
             }
         });

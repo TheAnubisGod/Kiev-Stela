@@ -101,6 +101,9 @@ next_buttons[3].addEventListener("click", function (event) {
                     steps[next_buttons[3].dataset.num].style.left = "0%"
                     steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
                 }
+            },
+            error: function () {
+                alert("Ошибка отправки формы!")
             }
         });
     }

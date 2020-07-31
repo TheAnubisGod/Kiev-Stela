@@ -112,6 +112,9 @@ $(document).ready(function () {
                         document.getElementById("main-form-name").value = ""
                         document.getElementById("main-form-phone").value = ""
                     }
+                },
+                error: function () {
+                    alert("Ошибка отправки формы!")
                 }
             });
         }
