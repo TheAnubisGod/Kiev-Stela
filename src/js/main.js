@@ -92,6 +92,30 @@ $(document).ready(function () {
 
     // Form
     $("#main-form-phone").inputmask({"mask": "+38 (999) 999-9999"});
+    document.getElementById("send-request").addEventListener("click", function (e) {
+        e.preventDefault()
+        let name = document.getElementById("main-form-name").value
+        let phone = document.getElementById("main-form-phone").value.replace(/[^+\d]/g, '')
+        if (name !== "" && phone.length === 13) {
+            $.ajax({
+                type: "POST",
+                url: "telegram.php",
+                data: {
+                    type: "request",
+                    name: name,
+                    phone: phone,
+                },
+                success: function (result) {
+                    if (result !== "success") {
+                        alert("Ошибка отправки формы!")
+                    } else {
+                        document.getElementById("main-form-name").value = ""
+                        document.getElementById("main-form-phone").value = ""
+                    }
+                }
+            });
+        }
+    })
 });
 
 

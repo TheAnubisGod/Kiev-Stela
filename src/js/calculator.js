@@ -2,7 +2,8 @@ let steps = document.querySelectorAll(".step")
 let current_step = 1;
 
 let data = {
-    square: 25,
+    type: "calculator",
+    square: "25",
     ceiling_type: 0,
     extra_elements: [],
     contact_type: 0,
@@ -10,7 +11,7 @@ let data = {
 }
 
 function validate_square() {
-    return (data.square > 0 && data.square <= 50)
+    return (parseInt(data.square) > 0 && parseInt(data.square) <= 50)
 }
 
 function validate_type() {
@@ -34,7 +35,7 @@ function validate_contact_type() {
 }
 
 function validate_phone() {
-    return (document.querySelector("#calc-phone").value.length === 18)
+    return (data.phone.length === 13)
 }
 
 function validate() {
@@ -87,16 +88,27 @@ next_buttons[2].addEventListener("click", function (event) {
 })
 
 next_buttons[3].addEventListener("click", function (event) {
-    if (!validate()) {
-        return
+    data.phone = document.querySelector("#calc-phone").value.replace(/[^+\d]/g, '')
+    if (validate()) {
+        $.ajax({
+            type: "POST",
+            url: "telegram.php",
+            data: data,
+            success: function (result) {
+                if (result !== "success") {
+                    alert(result)
+                } else {
+                    steps[next_buttons[3].dataset.num].style.left = "0%"
+                    steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
+                }
+            }
+        });
     }
-    steps[next_buttons[3].dataset.num].style.left = "0%"
-    steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
 })
 
 document.getElementById("square").addEventListener("input", function () {
     document.getElementById("square-val").innerText = this.value
-    data.square = parseInt(this.value)
+    data.square = this.value
 })
 
 for (let i = 1; i <= 8; i++) {
@@ -138,18 +150,6 @@ for (let i = 1; i <= 4; i++) {
         }
     })
 }
-
-document.getElementById("calc-check").addEventListener("click", function () {
-    data.phone = document.querySelector("#calc-phone").value
-    if (validate()) {
-        console.log(data)
-        $.ajax({
-            type: "POST",
-            url: "",
-            data: data,
-        });
-    }
-})
 
 $("#calc-phone").inputmask({"mask": "+38 (999) 999-9999"});
 
