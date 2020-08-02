@@ -1,20 +1,18 @@
-const form_url = ""
+const form_url = "telegram.php"
 
-function ajax(data) {
+function ajax(data, success_fuc) {
     $.ajax({
         type: "POST",
-        url: "telegram.php",
+        url: form_url,
         data: data,
         success: function (result) {
             if (result !== "success") {
                 alert("Ошибка отправки формы!")
-                return false
             }
-            return true
+            success_fuc()
         },
         error: function () {
             alert("Ошибка отправки формы!")
-            return false
         }
     });
 }
@@ -41,14 +39,14 @@ $(document).ready(function () {
         let name = document.getElementById("main-form-name").value
         let phone = document.getElementById("main-form-phone").value.replace(/[^+\d]/g, '')
         if (name !== "" && phone.length === 13) {
-            if (ajax({
+            ajax({
                 type: "request",
                 name: name,
                 phone: phone,
-            })) {
+            }, function () {
                 document.getElementById("main-form-name").value = ""
                 document.getElementById("main-form-phone").value = ""
-            }
+            })
         }
     })
 
@@ -136,10 +134,10 @@ $(document).ready(function () {
     next_buttons[3].addEventListener("click", function (event) {
         data.phone = document.querySelector("#calc-phone").value.replace(/[^+\d]/g, '')
         if (validate()) {
-            if (ajax(data)) {
+            ajax(data, function () {
                 steps[next_buttons[3].dataset.num].style.left = "0%"
                 steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
-            }
+            })
         }
     })
 
@@ -254,6 +252,3 @@ $(document).ready(function () {
     });
 
 });
-
-
-
