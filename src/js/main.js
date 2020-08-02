@@ -1,3 +1,24 @@
+const form_url = ""
+
+function ajax(data) {
+    $.ajax({
+        type: "POST",
+        url: "telegram.php",
+        data: data,
+        success: function (result) {
+            if (result !== "success") {
+                alert("Ошибка отправки формы!")
+                return false
+            }
+            return true
+        },
+        error: function () {
+            alert("Ошибка отправки формы!")
+            return false
+        }
+    });
+}
+
 $(document).ready(function () {
     // Pretty Links
     $('a[href^="#"]').bind('click.smoothscroll', function (e) {
@@ -20,26 +41,14 @@ $(document).ready(function () {
         let name = document.getElementById("main-form-name").value
         let phone = document.getElementById("main-form-phone").value.replace(/[^+\d]/g, '')
         if (name !== "" && phone.length === 13) {
-            $.ajax({
-                type: "POST",
-                url: "telegram.php",
-                data: {
-                    type: "request",
-                    name: name,
-                    phone: phone,
-                },
-                success: function (result) {
-                    if (result !== "success") {
-                        alert("Ошибка отправки формы!")
-                    } else {
-                        document.getElementById("main-form-name").value = ""
-                        document.getElementById("main-form-phone").value = ""
-                    }
-                },
-                error: function () {
-                    alert("Ошибка отправки формы!")
-                }
-            });
+            if (ajax({
+                type: "request",
+                name: name,
+                phone: phone,
+            })) {
+                document.getElementById("main-form-name").value = ""
+                document.getElementById("main-form-phone").value = ""
+            }
         }
     })
 
@@ -89,7 +98,6 @@ $(document).ready(function () {
     }
 
     let next_buttons = document.querySelectorAll(".btn-next")
-    let prev_buttons = document.querySelectorAll(".btn-prev")
 
     next_buttons[0].addEventListener("click", function (event) {
         if (!validate_square()) {
@@ -128,22 +136,10 @@ $(document).ready(function () {
     next_buttons[3].addEventListener("click", function (event) {
         data.phone = document.querySelector("#calc-phone").value.replace(/[^+\d]/g, '')
         if (validate()) {
-            $.ajax({
-                type: "POST",
-                url: "telegram.php",
-                data: data,
-                success: function (result) {
-                    if (result !== "success") {
-                        alert(result)
-                    } else {
-                        steps[next_buttons[3].dataset.num].style.left = "0%"
-                        steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
-                    }
-                },
-                error: function () {
-                    alert("Ошибка отправки формы!")
-                }
-            });
+            if (ajax(data)) {
+                steps[next_buttons[3].dataset.num].style.left = "0%"
+                steps[next_buttons[3].dataset.num - 1].style.left = "-100%"
+            }
         }
     })
 
@@ -233,26 +229,13 @@ $(document).ready(function () {
         let name = document.getElementById("name-modal").value
         let phone = document.getElementById("phone-modal").value.replace(/[^+\d]/g, '')
         if (name !== "" && phone.length === 13 && current_type !== "") {
-            $.ajax({
-                type: "POST",
-                url: "telegram.php",
-                data: {
-                    type: "modal",
-                    name: name,
-                    phone: phone,
-                    ceiling_type: current_type,
-                },
-                success: function (result) {
-                    if (result !== "success") {
-                        alert("Ошибка отправки формы!")
-                    }
-                    hide_modal()
-                },
-                error: function () {
-                    alert("Ошибка отправки формы!")
-                    hide_modal()
-                }
-            });
+            ajax({
+                type: "modal",
+                name: name,
+                phone: phone,
+                ceiling_type: current_type,
+            })
+            hide_modal()
         }
     })
 
